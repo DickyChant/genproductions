@@ -424,6 +424,7 @@ make_gridpack () {
     if [ -e $CARDSDIR/${name}_param_card.dat ]; then
       echo "copying custom params file"
       cp $CARDSDIR/${name}_param_card.dat ./Cards/param_card.dat
+      cat ./Cards/param_card.dat
     fi
      
     if [ "$isnlo" -gt "0" ]; then
@@ -445,6 +446,8 @@ make_gridpack () {
               echo "" >> makegrid.dat
       fi
       echo "done" >> makegrid.dat
+
+      cat makegrid.dat
 
       cat makegrid.dat | ./bin/generate_events -n pilotrun
       # Run this step separately in debug mode since it gives so many problems

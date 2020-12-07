@@ -1,0 +1,454 @@
+#************************************************************
+#*                    MadGraph5_aMC@NLO                     *
+#*                                                          *
+#*                *                       *                 *
+#*                  *        * *        *                   *
+#*                    * * * * 5 * * * *                     *
+#*                  *        * *        *                   *
+#*                *                       *                 *
+#*                                                          *
+#*                                                          *
+#*         VERSION 5.2.7.2               20xx-xx-xx         *
+#*                                                          *
+#*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+#*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+#*                           and                            *
+#*                http://amcatnlo.cern.ch                   *
+#*                                                          *
+#************************************************************
+#*                                                          *
+#*               Command File for aMCatNLO                  *
+#*                                                          *
+#*     run as ./bin/aMCatNLO.py filename                    *
+#*                                                          *
+#************************************************************
+launch -n pilotrun
+Traceback (most recent call last):
+  File "/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/processtmp/bin/internal/extended_cmd.py", line 1515, in onecmd
+    return self.onecmd_orig(line, **opt)
+  File "/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/processtmp/bin/internal/extended_cmd.py", line 1464, in onecmd_orig
+    return func(arg, **opt)
+  File "/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/processtmp/bin/internal/amcatnlo_run_interface.py", line 1688, in do_launch
+    evt_file = self.run(mode, options)
+  File "/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/processtmp/bin/internal/amcatnlo_run_interface.py", line 1919, in run
+    self.run_all_jobs(jobs_to_run,mint_step,fixed_order=False)
+  File "/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/processtmp/bin/internal/amcatnlo_run_interface.py", line 2125, in run_all_jobs
+    self.wait_for_complete(run_type)
+  File "/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/processtmp/bin/internal/amcatnlo_run_interface.py", line 4694, in wait_for_complete
+    self.cluster.wait(self.me_dir, update_status)
+  File "/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/processtmp/bin/internal/cluster.py", line 844, in wait
+    raise Exception, self.fail_msg
+Exception: program /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/processtmp/SubProcesses/P0_sxdx_mupmupuxcx_no_n2n3/ajob1 1 F 0 0 launch ends with non zero status: 1. Stop all computation
+Value of current Options:
+              text_editor 	:	None
+              web_browser 	:	None
+        cluster_temp_path 	:	None
+                  timeout 	:	60
+       cluster_local_path 	:	/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/lhapdf/6.2.1-ghjeda2/share/LHAPDF
+            cluster_queue 	:	local
+         madanalysis_path 	:	None
+                   lhapdf 	:	/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/lhapdf/6.2.1-ghjeda2/share/LHAPDF/../../bin/lhapdf-config
+             cluster_size 	:	100
+           cluster_memory 	:	None
+    cluster_status_update 	:	(600, 30)
+             cluster_time 	:	None
+            f2py_compiler 	:	None
+                    ninja 	:	/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/MG5_aMC_v2_7_2/HEPTools/lib
+               hepmc_path 	:	None
+             pythia8_path 	:	None
+                hwpp_path 	:	None
+   automatic_html_opening 	:	False
+       cluster_retry_wait 	:	300
+             stdout_level 	:	None
+          pythia-pgs_path 	:	None
+                 mg5_path 	:	/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/MG5_aMC_v2_7_2
+                  td_path 	:	None
+             delphes_path 	:	None
+              thepeg_path 	:	None
+             cluster_type 	:	condor
+        madanalysis5_path 	:	None
+      exrootanalysis_path 	:	None
+         fortran_compiler 	:	None
+                  nb_core 	:	10
+                  collier 	:	/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/MG5_aMC_v2_7_2/HEPTools/lib
+              auto_update 	:	0
+         cluster_nb_retry 	:	1
+               eps_viewer 	:	None
+             syscalc_path 	:	None
+                  fastjet 	:	None
+                    golem 	:	None
+             cpp_compiler 	:	None
+      notification_center 	:	True
+                 run_mode 	:	2
+#************************************************************
+#*                     MadGraph5_aMC@NLO                    *
+#*                                                          *
+#*                *                       *                 *
+#*                  *        * *        *                   *
+#*                    * * * * 5 * * * *                     *
+#*                  *        * *        *                   *
+#*                *                       *                 *
+#*                                                          *
+#*                                                          *
+#*         VERSION 2.7.2                 2020-03-17         *
+#*                                                          *
+#*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+#*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+#*                                                          *
+#************************************************************
+#*                                                          *
+#*               Command File for MadGraph5_aMC@NLO         *
+#*                                                          *
+#*     run as ./bin/mg5_aMC  filename                       *
+#*                                                          *
+#************************************************************
+set default_unset_couplings 99
+set group_subprocesses Auto
+set ignore_six_quark_processes False
+set loop_optimized_output True
+set loop_color_flows False
+set gauge unitary
+set complex_mass_scheme False
+set max_npoint_for_channel 0
+import model SM_HeavyN_NLO
+define j = g u c d s u~ c~ d~ s~
+define l+ = e+ mu+
+define l- = e- mu-
+define vl = ve vm vt
+define vl~ = ve~ vm~ vt~
+define p = 21 2 4 1 3 -2 -4 -1 -3 5 -5 # pass to 5 flavors
+define p = g u c d s u~ c~ d~ s~
+define j = p
+generate p p > mu+ mu+ j j QED=4 QCD=0 $$ w+ w- / n2 n3 [QCD]
+add process p p > mu- mu- j j QED=4 QCD=0 $$ w+ w- / n2 n3 [QCD]
+output HeavyN_udbar_WW_MuMu -nojpeg
+######################################################################
+## PARAM_CARD AUTOMATICALY GENERATED BY MG5 FOLLOWING UFO MODEL   ####
+######################################################################
+##                                                                  ##
+##  Width set on Auto will be computed following the information    ##
+##        present in the decay.py files of the model.               ##
+##        See  arXiv:1402.1178 for more details.                    ##
+##                                                                  ##
+######################################################################
+
+###################################
+## INFORMATION FOR LOOP
+###################################
+Block loop 
+    1 9.118800e+01 # MU_R 
+
+###################################
+## INFORMATION FOR MASS
+###################################
+Block mass 
+    6 1.733000e+02 # MT 
+   23 9.118760e+01 # MZ 
+   25 1.257000e+02 # MH 
+  9900012 3.000000e+02 # mN1 
+  9900014 5.000000e+02 # mN2 
+  9900016 1.000000e+03 # mN3 
+## Dependent parameters, given by model restrictions.
+## Those values should be edited following the 
+## analytical expression. MG5 ignores those values 
+## but they are important for interfacing the output of MG5
+## to external program such as Pythia.
+  1 0.000000e+00 # d : 0.0 
+  2 0.000000e+00 # u : 0.0 
+  3 0.000000e+00 # s : 0.0 
+  4 0.000000e+00 # c : 0.0 
+  5 0.000000e+00 # b : 0.0 
+  11 0.000000e+00 # e- : 0.0 
+  12 0.000000e+00 # ve : 0.0 
+  13 0.000000e+00 # mu- : 0.0 
+  14 0.000000e+00 # vm : 0.0 
+  15 0.000000e+00 # ta- : 0.0 
+  16 0.000000e+00 # vt : 0.0 
+  21 0.000000e+00 # g : 0.0 
+  22 0.000000e+00 # a : 0.0 
+  24 7.995123e+01 # w+ : cmath.sqrt(MZ__exp__2/2. + cmath.sqrt(MZ__exp__4/4. - (aEW*cmath.pi*MZ__exp__2)/(Gf*sqrt__2))) 
+  9000002 9.118760e+01 # ghz : MZ 
+  9000003 7.995123e+01 # ghwp : MW 
+  9000004 7.995123e+01 # ghwm : MW 
+
+###################################
+## INFORMATION FOR NUMIXING
+###################################
+Block numixing 
+    1 1.000000e+00 # VeN1 
+    2 0.000000e+00 # VeN2 
+    3 0.000000e+00 # VeN3 
+    4 0.000000e+00 # VmuN1 
+    5 1.000000e+00 # VmuN2 
+    6 0.000000e+00 # VmuN3 
+    7 0.000000e+00 # VtaN1 
+    8 0.000000e+00 # VtaN2 
+    9 1.000000e+00 # VtaN3 
+
+###################################
+## INFORMATION FOR SMINPUTS
+###################################
+Block sminputs 
+    1 1.279400e+02 # aEWM1 
+    2 1.174560e-05 # Gf 
+    3 1.184000e-01 # aS 
+
+###################################
+## INFORMATION FOR YUKAWA
+###################################
+Block yukawa 
+    6 1.733000e+02 # ymt 
+
+###################################
+## INFORMATION FOR DECAY
+###################################
+DECAY   6 1.350000e+00 # WT 
+DECAY  23 2.495200e+00 # WZ 
+DECAY  24 2.085000e+00 # WW 
+DECAY  25 4.170000e-03 # WH 
+DECAY 9900012 3.030000e-01 # WN1 
+DECAY 9900014 1.500000e+00 # WN2 
+DECAY 9900016 1.230000e+01 # WN3 
+## Dependent parameters, given by model restrictions.
+## Those values should be edited following the 
+## analytical expression. MG5 ignores those values 
+## but they are important for interfacing the output of MG5
+## to external program such as Pythia.
+DECAY  1 0.000000e+00 # d : 0.0 
+DECAY  2 0.000000e+00 # u : 0.0 
+DECAY  3 0.000000e+00 # s : 0.0 
+DECAY  4 0.000000e+00 # c : 0.0 
+DECAY  5 0.000000e+00 # b : 0.0 
+DECAY  11 0.000000e+00 # e- : 0.0 
+DECAY  12 0.000000e+00 # ve : 0.0 
+DECAY  13 0.000000e+00 # mu- : 0.0 
+DECAY  14 0.000000e+00 # vm : 0.0 
+DECAY  15 0.000000e+00 # ta- : 0.0 
+DECAY  16 0.000000e+00 # vt : 0.0 
+DECAY  21 0.000000e+00 # g : 0.0 
+DECAY  22 0.000000e+00 # a : 0.0 
+DECAY  9000002 2.495200e+00 # ghz : WZ 
+DECAY  9000003 2.085000e+00 # ghwp : WW 
+DECAY  9000004 2.085000e+00 # ghwm : WW 
+#===========================================================
+# QUANTUM NUMBERS OF NEW STATE(S) (NON SM PDG CODE)
+#===========================================================
+
+Block QNUMBERS 9000001  # gha 
+        1 0  # 3 times electric charge
+        2 1  # number of spin states (2S+1)
+        3 1  # colour rep (1: singlet, 3: triplet, 8: octet)
+        4 1  # Particle/Antiparticle distinction (0=own anti)
+Block QNUMBERS 9000002  # ghz 
+        1 0  # 3 times electric charge
+        2 1  # number of spin states (2S+1)
+        3 1  # colour rep (1: singlet, 3: triplet, 8: octet)
+        4 1  # Particle/Antiparticle distinction (0=own anti)
+Block QNUMBERS 9000003  # ghwp 
+        1 3  # 3 times electric charge
+        2 1  # number of spin states (2S+1)
+        3 1  # colour rep (1: singlet, 3: triplet, 8: octet)
+        4 1  # Particle/Antiparticle distinction (0=own anti)
+Block QNUMBERS 9000004  # ghwm 
+        1 -3  # 3 times electric charge
+        2 1  # number of spin states (2S+1)
+        3 1  # colour rep (1: singlet, 3: triplet, 8: octet)
+        4 1  # Particle/Antiparticle distinction (0=own anti)
+Block QNUMBERS 82  # ghg 
+        1 0  # 3 times electric charge
+        2 1  # number of spin states (2S+1)
+        3 8  # colour rep (1: singlet, 3: triplet, 8: octet)
+        4 1  # Particle/Antiparticle distinction (0=own anti)
+Block QNUMBERS 9900012  # n1 
+        1 0  # 3 times electric charge
+        2 2  # number of spin states (2S+1)
+        3 1  # colour rep (1: singlet, 3: triplet, 8: octet)
+        4 0  # Particle/Antiparticle distinction (0=own anti)
+Block QNUMBERS 9900014  # n2 
+        1 0  # 3 times electric charge
+        2 2  # number of spin states (2S+1)
+        3 1  # colour rep (1: singlet, 3: triplet, 8: octet)
+        4 0  # Particle/Antiparticle distinction (0=own anti)
+Block QNUMBERS 9900016  # n3 
+        1 0  # 3 times electric charge
+        2 2  # number of spin states (2S+1)
+        3 1  # colour rep (1: singlet, 3: triplet, 8: octet)
+        4 0  # Particle/Antiparticle distinction (0=own anti)
+#***********************************************************************
+#                        MadGraph5_aMC@NLO                             *
+#                                                                      *
+#                      run_card.dat aMC@NLO                            *
+#                                                                      *
+#  This file is used to set the parameters of the run.                 *
+#                                                                      *
+#  Some notation/conventions:                                          *
+#                                                                      *
+#   Lines starting with a hash (#) are info or comments                *
+#                                                                      *
+#   mind the format:   value    = variable     ! comment               *
+#                                                                      *
+#   Some of the values of variables can be list. These can either be   *
+#   comma or space separated.                                          *
+#                                                                      *
+#   To display additional parameter, you can use the command:          *
+#      update to_full                                                  *
+#***********************************************************************
+#
+#*******************                                                 
+# Running parameters
+#*******************                                                 
+#
+#***********************************************************************
+# Tag name for the run (one word)                                      *
+#***********************************************************************
+  tag_1     = run_tag ! name of the run 
+#***********************************************************************
+# Number of LHE events (and their normalization) and the required      *
+# (relative) accuracy on the Xsec.                                     *
+# These values are ignored for fixed order runs                        *
+#***********************************************************************
+ 1000 = nevents ! Number of unweighted events requested 
+ -1.0 = req_acc ! Required accuracy (-1=auto determined from nevents)
+ -1 = nevt_job! Max number of events per job in event generation. 
+                 !  (-1= no split).
+#***********************************************************************
+# Normalize the weights of LHE events such that they sum or average to *
+# the total cross section                                              *
+#***********************************************************************
+ average = event_norm    ! valid settings: average, sum, bias
+#***********************************************************************
+# Number of points per itegration channel (ignored for aMC@NLO runs)   *
+#***********************************************************************
+ 0.01   = req_acc_FO       ! Required accuracy (-1=ignored, and use the 
+ 	                   ! number of points and iter. below)
+# These numbers are ignored except if req_acc_FO is equal to -1
+ 5000   = npoints_FO_grid  ! number of points to setup grids
+ 4      = niters_FO_grid   ! number of iter. to setup grids
+ 10000  = npoints_FO       ! number of points to compute Xsec
+ 6      = niters_FO        ! number of iter. to compute Xsec
+#***********************************************************************
+# Random number seed                                                   *
+#***********************************************************************
+ 0    = iseed       ! rnd seed (0=assigned automatically=default))
+#***********************************************************************
+# Collider type and energy                                             *
+#***********************************************************************
+ 1   = lpp1    ! beam 1 type (0 = no PDF)
+ 1   = lpp2    ! beam 2 type (0 = no PDF)
+ 6500.0   = ebeam1  ! beam 1 energy in GeV
+ 6500.0   = ebeam2  ! beam 2 energy in GeV
+#***********************************************************************
+# PDF choice: this automatically fixes also alpha_s(MZ) and its evol.  *
+#***********************************************************************
+ lhapdf = pdlabel ! PDF set
+ 324700  = lhaid   ! If pdlabel=lhapdf, this is the lhapdf number. Only 
+              ! numbers for central PDF sets are allowed. Can be a list; 
+              ! PDF sets beyond the first are included via reweighting.
+#***********************************************************************
+# Include the NLO Monte Carlo subtr. terms for the following parton    *
+# shower (HERWIG6 | HERWIGPP | PYTHIA6Q | PYTHIA6PT | PYTHIA8)         *
+# WARNING: PYTHIA6PT works only for processes without FSR!!!!          *
+#***********************************************************************
+  PYTHIA8   = parton_shower
+  1.0 = shower_scale_factor ! multiply default shower starting
+                                  ! scale by this factor
+#***********************************************************************
+# Renormalization and factorization scales                             *
+# (Default functional form for the non-fixed scales is the sum of      *
+# the transverse masses divided by two of all final state particles    * 
+# and partons. This can be changed in SubProcesses/set_scales.f or via *
+# dynamical_scale_choice option)                                       *
+#***********************************************************************
+ False    = fixed_ren_scale  ! if .true. use fixed ren scale
+ False    = fixed_fac_scale  ! if .true. use fixed fac scale
+ 91.118   = muR_ref_fixed    ! fixed ren reference scale 
+ 91.118   = muF_ref_fixed    ! fixed fact reference scale
+ -1 = dynamical_scale_choice ! Choose one (or more) of the predefined
+           ! dynamical choices. Can be a list; scale choices beyond the
+           ! first are included via reweighting
+ 1.0  = muR_over_ref  ! ratio of current muR over reference muR
+ 1.0  = muF_over_ref  ! ratio of current muF over reference muF
+#*********************************************************************** 
+# Reweight variables for scale dependence and PDF uncertainty          *
+#***********************************************************************
+ 1.0, 2.0, 0.5 = rw_rscale ! muR factors to be included by reweighting
+ 1.0, 2.0, 0.5 = rw_fscale ! muF factors to be included by reweighting
+ True = reweight_scale ! Reweight to get scale variation using the 
+            ! rw_rscale and rw_fscale factors. Should be a list of 
+            ! booleans of equal length to dynamical_scale_choice to
+            ! specify for which choice to include scale dependence.
+ False = reweight_PDF  ! Reweight to get PDF uncertainty. Should be a
+            ! list booleans of equal length to lhaid to specify for
+            !  which PDF set to include the uncertainties.
+#***********************************************************************
+# Store reweight information in the LHE file for off-line model-       *
+# parameter reweighting at NLO+PS accuracy                             *
+#***********************************************************************
+ False = store_rwgt_info ! Store info for reweighting in LHE file
+#***********************************************************************
+# ickkw parameter:                                                     *
+#   0: No merging                                                      *
+#   3: FxFx Merging - WARNING! Applies merging only at the hard-event  *
+#      level. After showering an MLM-type merging should be applied as *
+#      well. See http://amcatnlo.cern.ch/FxFx_merging.htm for details. *
+#   4: UNLOPS merging (with pythia8 only). No interface from within    *
+#      MG5_aMC available, but available in Pythia8.                    *
+#  -1: NNLL+NLO jet-veto computation. See arxiv:1412.8408 [hep-ph].    *
+#***********************************************************************
+ 0        = ickkw
+#***********************************************************************
+#
+#***********************************************************************
+# BW cutoff (M+/-bwcutoff*Gamma). Determines which resonances are      *
+# written in the LHE event file                                        *
+#***********************************************************************
+ 15.0  = bwcutoff
+#***********************************************************************
+# Cuts on the jets. Jet clustering is performed by FastJet.            *
+#  - When matching to a parton shower, these generation cuts should be *
+#    considerably softer than the analysis cuts.                       *
+#  - More specific cuts can be specified in SubProcesses/cuts.f        *
+#***********************************************************************
+  -1  = jetalgo   ! FastJet jet algorithm (1=kT, 0=C/A, -1=anti-kT)
+  0.4  = jetradius ! The radius parameter for the jet algorithm
+ 20.0  = ptj       ! Min jet transverse momentum
+ 5.5  = etaj      ! Max jet abs(pseudo-rap) (a value .lt.0 means no cut)
+#***********************************************************************
+# Cuts on the charged leptons (e+, e-, mu+, mu-, tau+ and tau-)        *
+# More specific cuts can be specified in SubProcesses/cuts.f           *
+#***********************************************************************
+  0.0  = ptl     ! Min lepton transverse momentum
+ -1.0  = etal    ! Max lepton abs(pseudo-rap) (a value .lt.0 means no cut)
+  0.0  = drll    ! Min distance between opposite sign lepton pairs
+  0.0  = drll_sf ! Min distance between opp. sign same-flavor lepton pairs
+  0.0  = mll     ! Min inv. mass of all opposite sign lepton pairs
+ 10.0  = mll_sf  ! Min inv. mass of all opp. sign same-flavor lepton pairs
+#***********************************************************************
+# Photon-isolation cuts, according to hep-ph/9801442. When ptgmin=0,   *
+# all the other parameters are ignored.                                *
+# More specific cuts can be specified in SubProcesses/cuts.f           *
+#***********************************************************************
+ 20.0  = ptgmin    ! Min photon transverse momentum
+ -1.0  = etagamma  ! Max photon abs(pseudo-rap)
+  0.4  = R0gamma   ! Radius of isolation code
+  1.0  = xn        ! n parameter of eq.(3.4) in hep-ph/9801442
+  1.0  = epsgamma  ! epsilon_gamma parameter of eq.(3.4) in hep-ph/9801442
+ True  = isoEM  ! isolate photons from EM energy (photons and leptons)
+#***********************************************************************
+# Cuts associated to MASSIVE particles identified by their PDG codes.  *
+# All cuts are applied to both particles and anti-particles, so use    *
+# POSITIVE PDG CODES only. Example of the syntax is {6 : 100} or       *
+# {6:100, 25:200} for multiple particles                               *
+#***********************************************************************
+  {} = pt_min_pdg ! Min pT for a massive particle
+  {} = pt_max_pdg ! Max pT for a massive particle
+  {} = mxx_min_pdg ! inv. mass for any pair of (anti)particles
+#***********************************************************************
+# For aMCfast+APPLGRID use in PDF fitting (http://amcfast.hepforge.org)*
+#***********************************************************************
+ 0 = iappl ! aMCfast switch (0=OFF, 1=prepare grids, 2=fill grids)
+#***********************************************************************
+4 = maxjetflavor
+False = reweight_scale
+False = reweight_PDF
+True = store_rwgt_info

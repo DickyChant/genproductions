@@ -1,0 +1,11 @@
+--- madgraph/various/systematics.py	2017-05-01 21:02:10.402600552 +0300
++++ madgraph/various/systematics.py	2017-05-01 21:01:44.759601146 +0300
+@@ -228,7 +228,7 @@
+         else:
+             lowest_id = self.get_id()        
+ 
+-        ids = [lowest_id+i for i in range(len(self.args)-1)]
++        ids = [lowest_id+i for i in range(len(self.args))]
+         all_cross = [0 for i in range(len(self.args))]
+         
+         self.input.parsing = False

@@ -1,0 +1,32 @@
+shower=OFF
+reweight=OFF
+done
+set param_card  mass 5 4.700000e+00 
+set param_card  mass 6 1.729000e+02
+set param_card  mass 15 1.777000e+00 
+set param_card  mass 23 9.118760e+01 
+set param_card  mass 25 1.251000e+02 
+set param_card  mass 9900012 3.000000e+02
+set param_card  mass 9900014 1.000000e+10 
+set param_card  mass 9900016 1.000000e+10 
+
+
+set param_card NUMIXING   1 0.000000e+00
+set param_card NUMIXING   2 0.000000e+00
+set param_card NUMIXING   3 0.000000e+00
+set param_card NUMIXING   4 1.000000e+00 
+set param_card NUMIXING   5 1.000000e+00 
+set param_card NUMIXING   6 1.000000e+00 
+set param_card NUMIXING   7 0.000000e+00 
+set param_card NUMIXING   8 0.000000e+00 
+set param_card NUMIXING   9 0.000000e+00 
+
+
+set param_card SMINPUTS    1 1.325070e+02 
+set param_card SMINPUTS    2 1.166390e-05
+set param_card SMINPUTS    3 1.180000e-01
+
+
+
+
+done

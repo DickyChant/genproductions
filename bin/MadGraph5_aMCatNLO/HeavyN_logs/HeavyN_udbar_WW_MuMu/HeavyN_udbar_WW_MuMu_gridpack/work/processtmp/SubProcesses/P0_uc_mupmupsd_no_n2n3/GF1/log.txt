@@ -1,0 +1,417 @@
+==== LHAPDF6 USING DEFAULT-TYPE LHAGLUE INTERFACE ====
+LHAPDF 6.2.1 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/lhapdf/6.2.1-ghjeda2/share/LHAPDF/NNPDF31_nnlo_as_0118_CMSW4/NNPDF31_nnlo_as_0118_CMSW4_0000.dat
+NNPDF31_nnlo_as_0118_CMSW4 PDF set, member #0, version 1; LHAPDF ID = 324700
+ ===============================================================
+ INFO: MadFKS read these parameters from FKS_params.dat                                                  
+ ===============================================================
+  > IRPoleCheckThreshold      =   -1.0000000000000000     
+  > PrecisionVirtualAtRunTime =   -1.0000000000000000     
+  > NHelForMCoverHels         =            4
+  > VirtualFraction           =    1.0000000000000000     
+  > MinVirtualFraction        =    5.0000000000000001E-003
+ ===============================================================
+ A PDF is used, so alpha_s(MZ) is going to be modified
+ Old value of alpha_s from param_card:   0.11839999999999999     
+ New value of alpha_s from PDF lhapdf :  0.11800208008122040     
+ using LHAPDF
+WARNING: the value of maxjetflavorspecified in the run_card (  4) is inconsistent with the number of light flavours inthe model. Hence it will be set to:  5
+ *****************************************************
+ *               MadGraph/MadEvent                   *
+ *        --------------------------------           *
+ *          http://madgraph.hep.uiuc.edu             *
+ *          http://madgraph.phys.ucl.ac.be           *
+ *          http://madgraph.roma2.infn.it            *
+ *        --------------------------------           *
+ *                                                   *
+ *          PARAMETER AND COUPLING VALUES            *
+ *                                                   *
+ *****************************************************
+
+  External Params
+  ---------------------------------
+  
+ MU_R =    91.188000000000002     
+ mdl_VeN1 =    1.0000000000000000     
+ mdl_VeN2 =    0.0000000000000000     
+ mdl_VeN3 =    0.0000000000000000     
+ mdl_VmuN1 =    0.0000000000000000     
+ mdl_VmuN2 =    1.0000000000000000     
+ mdl_VmuN3 =    0.0000000000000000     
+ mdl_VtaN1 =    0.0000000000000000     
+ mdl_VtaN2 =    0.0000000000000000     
+ mdl_VtaN3 =    1.0000000000000000     
+ aEWM1 =    127.94000000000000     
+ mdl_Gf =    1.1745600000000000E-005
+ aS =   0.11839999999999999     
+ mdl_ymt =    173.30000000000001     
+ mdl_MZ =    91.187600000000003     
+ mdl_MT =    173.30000000000001     
+ mdl_MH =    125.70000000000000     
+ mdl_mN1 =    300.00000000000000     
+ mdl_mN2 =    500.00000000000000     
+ mdl_mN3 =    1000.0000000000000     
+ mdl_WZ =    2.4952000000000001     
+ mdl_WW =    2.0850000000000000     
+ mdl_WT =    1.3500000000000001     
+ mdl_WH =    4.1700000000000001E-003
+ mdl_WN1 =   0.30299999999999999     
+ mdl_WN2 =    1.5000000000000000     
+ mdl_WN3 =    12.300000000000001     
+  Internal Params
+  ---------------------------------
+  
+ mdl_MZ__exp__2 =    8315.1783937600012     
+ mdl_MZ__exp__4 =    69142191.720053151     
+ mdl_sqrt__2 =    1.4142135623730951     
+ mdl_MH__exp__2 =    15800.490000000002     
+ mdl_complexi =  (  0.0000000000000000     ,  1.0000000000000000     )
+ mdl_MT__exp__2 =    30032.890000000003     
+ mdl_aEW =    7.8161638267938097E-003
+ mdl_MW =    79.951229855436395     
+ mdl_sqrt__aEW =    8.8409070953120020E-002
+ mdl_ee =   0.31340199653167311     
+ mdl_MW__exp__2 =    6392.1991553968237     
+ mdl_sw2 =   0.23126133286644190     
+ mdl_cw =   0.87677743306585976     
+ mdl_sqrt__sw2 =   0.48089638475085450     
+ mdl_sw =   0.48089638475085450     
+ mdl_g1 =   0.35744760838082806     
+ mdl_gN =   0.65170378998386980     
+ mdl_gw =   0.65170378998386980     
+ mdl_vev =    245.36064108945956     
+ mdl_vev__exp__2 =    60201.844195830592     
+ mdl_lam =   0.13122928550662488     
+ mdl_yt =   0.99886929407679126     
+ mdl_muH =    88.883322395149023     
+ mdl_I2a33 =  ( 0.99886929407679126     ,  0.0000000000000000     )
+ mdl_I3a33 =  ( 0.99886929407679126     ,  0.0000000000000000     )
+ mdl_ee__exp__2 =    9.8220811430038843E-002
+ mdl_sw__exp__2 =   0.23126133286644188     
+ mdl_cw__exp__2 =   0.76873866713355821     
+ mdl_yt__exp__2 =   0.99773986664946734     
+  Internal Params evaluated point by point
+  ----------------------------------------
+  
+ mdl_sqrt__aS =   0.34409301068170506     
+ mdl_G__exp__2 =    1.4878582807401259     
+ mdl_G__exp__3 =    1.8148567439626970     
+ mdl_G__exp__4 =    2.2137222635669636     
+  Couplings of SM_HeavyN_NLO
+  ---------------------------------
+  
+  R2GC_185_38 =  -0.00000E+00  -0.11578E-01
+ UVGC_185_27_1ep  0.00000E+00   0.28946E-02
+ UVGC_185_28_1ep -0.00000E+00  -0.57892E-02
+        GC_11 =   0.00000E+00   0.12198E+01
+        GC_24 =   0.00000E+00   0.46082E+00
+        GC_79 =   0.00000E+00   0.00000E+00
+
+ Collider parameters:
+ --------------------
+
+ Running at P P   machine @    13000.000000000000       GeV
+ PDF set = lhapdf 
+ alpha_s(Mz)= 0.1180 running at 3 loops.
+ alpha_s(Mz)= 0.1180 running at 3 loops.
+ Renormalization scale set on event-by-event basis
+ Factorization   scale set on event-by-event basis
+
+
+ Diagram information for  clustering has been set-up for nFKSprocess           1
+ Diagram information for  clustering has been set-up for nFKSprocess           2
+ Diagram information for  clustering has been set-up for nFKSprocess           3
+ Diagram information for  clustering has been set-up for nFKSprocess           4
+ Diagram information for  clustering has been set-up for nFKSprocess           5
+ Diagram information for  clustering has been set-up for nFKSprocess           6
+ getting user params
+Enter number of events and iterations: 
+ Number of events and iterations           -1          12
+Enter desired fractional accuracy: 
+ Desired fractional accuracy:    2.9999999999999999E-002
+ Enter alpha, beta for G_soft
+   Enter alpha<0 to set G_soft=1 (no ME soft)
+ for G_soft: alpha=   1.0000000000000000      , beta= -0.10000000000000001     
+ Enter alpha, beta for G_azi
+   Enter alpha>0 to set G_azi=0 (no azi corr)
+ for G_azi: alpha=  -1.0000000000000000      , beta= -0.10000000000000001     
+ Doing the S and H events together
+Suppress amplitude (0 no, 1 yes)? 
+ Using suppressed amplitude.
+Exact helicity sum (0 yes, n = number/event)? 
+ Do MC over helicities for the virtuals
+Enter Configuration Number: 
+Running Configuration Number:    1
+Enter running mode for MINT:
+0 to set-up grids, 1 to integrate, 2 to generate events
+ MINT running mode:           0
+Set the three folding parameters for MINT
+xi_i, phi_i, y_ij
+           1           1           1
+ 'all ', 'born', 'real', 'virt', 'novi' or 'grid'?
+ Enter 'born0' or 'virt0' to perform
+  a pure n-body integration (no S functions)
+ doing the all  of this channel
+ Normal integration (Sfunction != 1)
+ about to integrate           13          -1          12           1
+ imode is            0
+channel    1 :     1 T        0        0  0.1000E+01  0.0000E+00  0.1000E+01
+#--------------------------------------------------------------------------
+#                     FastJet release 3.1.3 [fjcore]
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           http://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the terms of the GNU GPLv2.
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code
+# and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP 1
+Thanks for using LHAPDF 6.2.1. Please make sure to cite the paper:
+  Eur.Phys.J. C75 (2015) 3, 132  (http://arxiv.org/abs/1412.7420)
+ ------- iteration           1
+ Update # PS points (even):         1040  -->         1040
+Using random seed offsets:     1 ,      2 ,      0
+  with seed                   33
+ Ranmar initialization seeds       11949        9409
+ Total number of FKS directories is           6
+ FKS process map (sum=           3 ) :
+           1 -->           2 :           1           5
+           2 -->           2 :           2           6
+           3 -->           1 :           3
+           4 -->           1 :           4
+ ================================
+ process combination map (specified per FKS dir):
+  1 map         1
+  1 inv. map    1
+  2 map         1
+  2 inv. map    1
+  3 map         1
+  3 inv. map    1
+  4 map         1
+  4 inv. map    1
+  5 map         1
+  5 inv. map    1
+  6 map         1
+  6 inv. map    1
+ ================================
+tau_min   1     1 : 0.00000E+00      --       0.40000E+02
+tau_min   2     1 : 0.00000E+00      --       0.40000E+02
+tau_min   3     1 : 0.40000E+02  0.40000E+02  0.40000E+02
+tau_min   4     1 : 0.40000E+02  0.40000E+02  0.40000E+02
+tau_min   5     1 : 0.00000E+00      --       0.40000E+02
+tau_min   6     1 : 0.00000E+00      --       0.40000E+02
+ bpower is   0.0000000000000000     
+ Scale values (may change event by event):
+ muR,  muR_reference:  0.434201D+02 0.434201D+02  1.00
+ muF1, muF1_reference: 0.434201D+02 0.434201D+02  1.00
+ muF2, muF2_reference: 0.434201D+02 0.434201D+02  1.00
+ QES,  QES_reference:  0.434201D+02 0.434201D+02  1.00
+  
+ muR_reference [functional form]:
+    H_T/2 := sum_i mT(i)/2, i=final state
+ muF1_reference [functional form]:
+    H_T/2 := sum_i mT(i)/2, i=final state
+ muF2_reference [functional form]:
+    H_T/2 := sum_i mT(i)/2, i=final state
+ QES_reference [functional form]: 
+    H_T/2 := sum_i mT(i)/2, i=final state
+  
+ alpha_s=  0.13295312044777513     
+ ERROR: INTEGRAL APPEARS TO BE ZERO.
+ TRIED      100880 PS POINTS AND ONLY            0  GAVE A NON-ZERO INTEGRAND.
+Error: Status code 1
++ Hostname:
+lxplus603.cern.ch
++ Printing environment
+SRT_G4LEVELGAMMADATA_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-G4PhotonEvaporation/3.2/data/PhotonEvaporation3.2
+UTM_XSD_DIR=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/utm/utm_0.6.5
+G4LEVELGAMMADATA=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-G4PhotonEvaporation/3.2/data/PhotonEvaporation3.2
+MANPATH=/cvmfs/cms.cern.ch/share/man::/opt/puppetlabs/puppet/share/man
+SCRAMRT_SET=CMSSW:CMSSW_9_3_16:slc6_amd64_gcc630:V2_2_9_pre11:SRT_
+CMSSW_RELEASE_BASE=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16
+CMSSW_FWLITE_INCLUDE_PATH=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sherpa/2.2.6-ghjeda/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/hepmc/2.06.07-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/clhep/2.3.4.2-mlhled2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/boost/1.63.0-mlhled2/include
+HOSTNAME=lxplus603.cern.ch
+SRT_MALLOC_CONF_SCRAMRTDEL=lg_chunk:18,lg_dirty_mult:4
+COMPILER_RUNTIME_OBJECTS=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gcc/6.3.0
+SELINUX_ROLE_REQUESTED=
+SRT_TEXMFHOME_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/rivet/2.5.2-ghjeda4/share/Rivet/texmf
+INTEL_LICENSE_FILE=28518@lxlicen01.cern.ch,28518@lxlicen02.cern.ch,28518@lxlicen03.cern.ch
+ROOT_INCLUDE_PATH=/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/src:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/src:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/coral/CORAL_2_3_21-ghjeda7/include/LCG:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/mctester/1.25.0a-ghjeda4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/lcg/root/6.10.04-ghjeda/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include/QtDesigner:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/herwigpp/7.1.4-ghjeda2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/tauolapp/1.1.5-ghjeda7/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/charybdis/1.003-ghjeda4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sherpa/2.2.6-ghjeda/include/SHERPA-MC:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include/QtOpenGL:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include/QtGui:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/thepeg/2.1.4-ghjeda/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/pythia8/230-ghjeda5/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/herwig/6.521-ghjeda4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/rivet/2.5.2-ghjeda4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include/Qt3Support:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/lwtnn/1.0-mlhled2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/classlib/3.1.3-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/lhapdf/6.2.1-ghjeda2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/cgal/4.2-mlhled2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/tkonlinesw/4.1.0-1-ghjeda4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/starlight/r193-mlhled2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include/Qt:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include/QtCore:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include/QtXml:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/mcdb/1.0.3/interface:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/libungif/4.1.4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/libtiff/4.0.3-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/libpng/1.6.16-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4/10.02.p02-ghjeda5/include/Geant4:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/frontier_client/2.8.20-mlhled2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/pcre/8.37-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/boost/1.63.0-mlhled2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/xrootd/4.6.1/include/xrootd/private:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/vdt/v0.3.2-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/valgrind/3.12.0-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/utm/utm_0.6.5/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/toprex/4.23/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/tbb/2017_20161004oss/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/tauola/27.121.5/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sigcpp/2.6.2-oenich/include/sigc++-2.0:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sqlite/3.15.1/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/protobuf/3.2.0/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/pacparser/1.3.5/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/oracle/12.1.0.2.0/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/meschach/1.2.pCMS1/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/libhepml/0.2.1/interface:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/ktjet/1.06-mlhled2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/jimmy/4.2-ghjeda4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/jemalloc/4.5.0/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/xz/5.2.2-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/madgraph5amcatnlo/2.6.0-ghjeda2:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/heppdt/3.03.00/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/hector/1.3.4_patch1-ghjeda4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gsl/2.2.1/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/libjpeg-turbo/1.3.1/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/giflib/4.2.3-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/xerces-c/3.1.3/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gdbm/1.10/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/freetype/2.5.3-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/fftw3/3.3.2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/fftjet/1.5.0/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/fastjet/3.1.0/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/expat/2.1.0/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/hepmc/2.06.07-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/dpm/1.8.0.1/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/dcap/2.47.8-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/libxml2/2.9.1-oenich/include/libxml2:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/curl/7.51.0-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/cppunit/1.12.1/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/clhep/2.3.4.2-mlhled2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/openssl/1.0.2d/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/pythia6/426/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/photos/215.5/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/zlib-x86_64/1.2.11/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/libuuid/2.22.2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/castor/2.1.13.9/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/castor/2.1.13.9/include/shift:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/cascade/2.2.04-ghjeda4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/bz2lib/1.0.6/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/python/2.7.11-mlhled2/include/python2.7:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/ittnotify/16.06.18-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gosamcontrib/2.0-20150803-omkpbe/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gcc/6.3.0/include/c++/6.3.0:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gcc/6.3.0/include/c++/6.3.0/x86_64-unknown-linux-gnu:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gcc/6.3.0/include/c++/6.3.0/backward:/usr/local/include:/usr/include
+TERM=screen
+SHELL=/bin/bash
+SRT_GEANT4_PARFULLCMS_CONFIG_DIR_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-parfullcms/2014.01.27-ghjeda5/share/ParFullCMS
+HISTSIZE=1000
+SRT_TNS_ADMIN_SCRAMRTDEL=/etc
+DBSCMD_HOME=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/dbs-client/DBS_2_1_9-mlhled2/lib/DBSAPI
+PDFPATH=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/rivet/2.5.2-ghjeda4/share
+TMPDIR=/tmp/sqian
+NLS_LANG=AMERICAN_AMERICA.WE8ISO8859P1
+SSH_CLIENT=202.122.33.185 58324 22
+ROOT_GCC_TOOLCHAIN=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gcc/6.3.0
+SRT_PDFPATH_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/rivet/2.5.2-ghjeda4/share
+SRT_QTDIR_SCRAMRT=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7
+OPENBLAS_NUM_THREADS=1
+G4FORCENUMBEROFTHREADS=max
+PERL5LIB=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/git/1.8.3.1-oenich/share/perl5
+CVSROOT=:gserver:cmssw.cvs.cern.ch:/local/reps/CMSSW
+SELINUX_USE_CURRENT_RANGE=
+LHAPDF_DATA_PATH=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/lhapdf/6.2.1-ghjeda2/share/LHAPDF
+CMSSW_DATA_PATH=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms
+SRT_G4ABLADATA_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-G4ABLA/3.0/data/G4ABLA3.0
+CMSSW_GIT_HASH=CMSSW_9_3_16
+QTDIR=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7:/usr/lib64/qt-3.3
+OLDPWD=/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/processtmp/SubProcesses/P0_uc_mupmupsd_no_n2n3
+SRT_SCONS_LIB_DIR_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/scons/3.0.1/lib
+SCRAM_ARCH=slc6_amd64_gcc630
+QTINC=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include:/usr/lib64/qt-3.3/include
+SRT_COMPILER_RUNTIME_OBJECTS_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gcc/6.3.0
+G4NEUTRONXSDATA=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-G4NEUTRONXS/1.4/data/G4NEUTRONXS1.4
+SSH_TTY=/dev/pts/12
+SRT_THEPEGPATH_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/thepeg/2.1.4-ghjeda/share/ThePEG
+SRT_GIT_EXEC_PATH_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/git/1.8.3.1-oenich/libexec/git-core
+SRT_CMS_OPENLOOPS_PREFIX_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/openloops/2.0.0
+DBS_CLIENT_CONFIG=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/dbs-client/DBS_2_1_9-mlhled2/lib/DBSAPI/dbs.config
+GIT_SSL_CAINFO=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/git/1.8.3.1-oenich/share/ssl/certs/ca-bundle.crt
+STAGE_HOST=castorcms
+RELEASE=CMSSW_9_3_16
+SRT_ROOT_INCLUDE_PATH_SCRAMRTDEL=/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/src:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/src:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/coral/CORAL_2_3_21-ghjeda7/include/LCG:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/mctester/1.25.0a-ghjeda4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/lcg/root/6.10.04-ghjeda/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include/QtDesigner:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/herwigpp/7.1.4-ghjeda2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/tauolapp/1.1.5-ghjeda7/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/charybdis/1.003-ghjeda4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sherpa/2.2.6-ghjeda/include/SHERPA-MC:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include/QtOpenGL:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include/QtGui:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/thepeg/2.1.4-ghjeda/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/pythia8/230-ghjeda5/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/herwig/6.521-ghjeda4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/rivet/2.5.2-ghjeda4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include/Qt3Support:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/lwtnn/1.0-mlhled2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/classlib/3.1.3-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/lhapdf/6.2.1-ghjeda2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/cgal/4.2-mlhled2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/tkonlinesw/4.1.0-1-ghjeda4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/starlight/r193-mlhled2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include/Qt:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include/QtCore:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include/QtXml:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/mcdb/1.0.3/interface:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/libungif/4.1.4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/libtiff/4.0.3-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/libpng/1.6.16-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4/10.02.p02-ghjeda5/include/Geant4:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/frontier_client/2.8.20-mlhled2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/pcre/8.37-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/boost/1.63.0-mlhled2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/xrootd/4.6.1/include/xrootd/private:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/vdt/v0.3.2-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/valgrind/3.12.0-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/utm/utm_0.6.5/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/toprex/4.23/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/tbb/2017_20161004oss/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/tauola/27.121.5/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sigcpp/2.6.2-oenich/include/sigc++-2.0:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sqlite/3.15.1/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/protobuf/3.2.0/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/pacparser/1.3.5/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/oracle/12.1.0.2.0/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/meschach/1.2.pCMS1/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/libhepml/0.2.1/interface:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/ktjet/1.06-mlhled2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/jimmy/4.2-ghjeda4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/jemalloc/4.5.0/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/xz/5.2.2-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/madgraph5amcatnlo/2.6.0-ghjeda2:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/heppdt/3.03.00/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/hector/1.3.4_patch1-ghjeda4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gsl/2.2.1/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/libjpeg-turbo/1.3.1/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/giflib/4.2.3-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/xerces-c/3.1.3/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gdbm/1.10/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/freetype/2.5.3-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/fftw3/3.3.2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/fftjet/1.5.0/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/fastjet/3.1.0/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/expat/2.1.0/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/hepmc/2.06.07-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/dpm/1.8.0.1/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/dcap/2.47.8-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/libxml2/2.9.1-oenich/include/libxml2:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/curl/7.51.0-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/cppunit/1.12.1/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/clhep/2.3.4.2-mlhled2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/openssl/1.0.2d/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/pythia6/426/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/photos/215.5/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/zlib-x86_64/1.2.11/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/libuuid/2.22.2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/castor/2.1.13.9/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/castor/2.1.13.9/include/shift:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/cascade/2.2.04-ghjeda4/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/bz2lib/1.0.6/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/python/2.7.11-mlhled2/include/python2.7:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/ittnotify/16.06.18-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gosamcontrib/2.0-20150803-omkpbe/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gcc/6.3.0/include/c++/6.3.0:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gcc/6.3.0/include/c++/6.3.0/x86_64-unknown-linux-gnu:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gcc/6.3.0/include/c++/6.3.0/backward:/usr/local/include:/usr/include
+SRT_INTEL_LICENSE_FILE_SCRAMRTDEL=28518@lxlicen01.cern.ch,28518@lxlicen02.cern.ch,28518@lxlicen03.cern.ch
+EVTGENDATA=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/evtgen/1.6.0-ghjeda7/share
+ROOT_TTREECACHE_SIZE=0
+SRT_QTINC_SCRAMRT=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/include
+SRT_ROOT_TTREECACHE_PREFILL_SCRAMRTDEL=0
+SRT_VINCIADATA_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/vincia/1.2.02-ghjeda7/share/Vincia/xmldoc
+G4LEDATA=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-G4EMLOW/6.48/data/G4EMLOW6.48
+USER=sqian
+OPAL_PREFIX=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/openmpi/2.1.2rc4
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.tbz=01;31:*.tbz2=01;31:*.bz=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:
+SRT_LHAPDF_DATA_PATH_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/lhapdf/6.2.1-ghjeda2/share/LHAPDF
+SHERPA_INCLUDE_PATH=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sherpa/2.2.6-ghjeda/include/SHERPA-MC
+ROOT_PATH=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/madgraph5amcatnlo/2.6.0-ghjeda2:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gosamcontrib/2.0-20150803-omkpbe
+LD_LIBRARY_PATH=/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/biglib/slc6_amd64_gcc630:/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/lib/slc6_amd64_gcc630:/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/external/slc6_amd64_gcc630/lib:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/biglib/slc6_amd64_gcc630:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/lib/slc6_amd64_gcc630:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/external/slc6_amd64_gcc630/lib:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/llvm/4.0.0-njopjo/lib64:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gcc/6.3.0/lib64:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gcc/6.3.0/lib
+SRT_RIVET_ANALYSIS_PATH_SCRAMRTDEL=/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/lib/slc6_amd64_gcc630:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/lib/slc6_amd64_gcc630:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/rivet/2.5.2-ghjeda4/lib
+SRT_CMSSW_RELEASE_BASE_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16
+SRT_CMSSW_VERSION_SCRAMRTDEL=CMSSW_9_3_16
+SRT_ROOTSYS_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/lcg/root/6.10.04-ghjeda/
+SRT_CMSSW_GIT_HASH_SCRAMRTDEL=CMSSW_9_3_16
+VALGRIND_LIB=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/valgrind/3.12.0-oenich/lib/valgrind
+GEANT4_PARFULLCMS_CONFIG_DIR=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-parfullcms/2014.01.27-ghjeda5/share/ParFullCMS
+G4NEUTRONHPDATA=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-G4NDL/4.5/data/G4NDL4.5
+CSC_TRACK_FINDER_DATA_DIR=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/CSCTrackFinderEmulation/1.2/data/
+CASTOR_HOME=/castor/cern.ch/user/s/sqian
+SRT_CLHEP_PARAM_PATH_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/clhep/2.3.4.2-mlhled2
+SRT_G4ENSDFSTATEDATA_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-G4ENSDFSTATE/1.2.3/data/G4ENSDFSTATE1.2.3
+SRT_G4RADIOACTIVEDATA_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-G4RadioactiveDecay/4.3.2/data/RadioactiveDecay4.3.2
+SRT_ROOFITSYS_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/lcg/root/6.10.04-ghjeda/
+ROOFITSYS=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/lcg/root/6.10.04-ghjeda/
+G4RADIOACTIVEDATA=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-G4RadioactiveDecay/4.3.2/data/RadioactiveDecay4.3.2
+G4ENSDFSTATEDATA=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-G4ENSDFSTATE/1.2.3/data/G4ENSDFSTATE1.2.3
+COLUMNS=80
+G4ABLADATA=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-G4ABLA/3.0/data/G4ABLA3.0
+SRT_SHERPA_INCLUDE_PATH_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sherpa/2.2.6-ghjeda/include/SHERPA-MC
+BOOSTINCLUDES=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/boost/1.63.0-mlhled2/include
+SRT_WORKER_DATA_PATH_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/blackhat/0.9.9-mlhled2/share/blackhat/datafiles/
+SRT_PERL5LIB_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/git/1.8.3.1-oenich/share/perl5
+SRT_G4FORCENUMBEROFTHREADS_SCRAMRTDEL=max
+MAIL=/var/spool/mail/sqian
+PATH=/cvmfs/cms.cern.ch/share/overrides/bin:/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/bin/slc6_amd64_gcc630:/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/external/slc6_amd64_gcc630/bin:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/bin/slc6_amd64_gcc630:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/external/slc6_amd64_gcc630/bin:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/llvm/4.0.0-njopjo/bin:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gcc/6.3.0/bin:/afs/cern.ch/cms/caf/scripts:/cvmfs/cms.cern.ch/common:/usr/sue/bin:/usr/lib64/qt-3.3/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/puppetlabs/bin:/afs/cern.ch/user/s/sqian/.local/bin:/afs/cern.ch/user/s/sqian/bin
+SRT_HEPPDT_PARAM_PATH_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/heppdt/3.03.00
+TNS_ADMIN=/etc
+SRT_GIT_SSL_CAINFO_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/git/1.8.3.1-oenich/share/ssl/certs/ca-bundle.crt
+SRT_CMSSW_SEARCH_PATH_SCRAMRTDEL=/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/src:/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/external/slc6_amd64_gcc630/data:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/src:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/external/slc6_amd64_gcc630/data
+SRT_DBS_CLIENT_CONFIG_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/dbs-client/DBS_2_1_9-mlhled2/lib/DBSAPI/dbs.config
+THEPEGPATH=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/thepeg/2.1.4-ghjeda/share/ThePEG
+CMS_PATH=/cvmfs/cms.cern.ch
+SRT_PATH_SCRAMRT=/cvmfs/cms.cern.ch/share/overrides/bin:/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/bin/slc6_amd64_gcc630:/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/external/slc6_amd64_gcc630/bin:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/bin/slc6_amd64_gcc630:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/external/slc6_amd64_gcc630/bin:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/llvm/4.0.0-njopjo/bin:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gcc/6.3.0/bin
+SRT_UTM_XSD_DIR_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/utm/utm_0.6.5
+PWD=/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/processtmp/SubProcesses/P0_uc_mupmupsd_no_n2n3/GF1
+SRT_LANG_SCRAMRT=C
+SRT_CMSSW_BASE_SCRAMRTDEL=/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack
+SRT_LOCALRT_SCRAMRTDEL=/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack
+RIVET_ANALYSIS_PATH=/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/lib/slc6_amd64_gcc630:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/lib/slc6_amd64_gcc630:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/rivet/2.5.2-ghjeda4/lib
+EDITOR=/bin/nano -w
+SRT_OPAL_PREFIX_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/openmpi/2.1.2rc4
+LANG=C
+MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles
+LOADEDMODULES=
+KDEDIRS=/usr
+SRT_G4NEUTRONHPDATA_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-G4NDL/4.5/data/G4NDL4.5
+SRT_SHERPA_SHARE_PATH_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sherpa/2.2.6-ghjeda/share/SHERPA-MC
+MYPROXY_SERVER=myproxy.cern.ch
+SELINUX_LEVEL_REQUESTED=
+SRT_CASCADE_PDFPATH_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/cascade/2.2.04-ghjeda4/share
+SRT_ROOT_GCC_TOOLCHAIN_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gcc/6.3.0
+CASCADE_PDFPATH=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/cascade/2.2.04-ghjeda4/share
+LINES=24
+AFSDIR=/afs/cern.ch/work/s/sqian
+EOS_MGM_URL=root://eoscms.cern.ch
+SRT_DBSCMD_HOME_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/dbs-client/DBS_2_1_9-mlhled2/lib/DBSAPI
+G4SAIDXSDATA=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-G4SAIDDATA/1.1/data/G4SAIDDATA1.1
+GIT_TEMPLATE_DIR=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/git/1.8.3.1-oenich/share/git-core/templates
+WORKER_DATA_PATH=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/blackhat/0.9.9-mlhled2/share/blackhat/datafiles/
+SRT_CMSSW_FWLITE_INCLUDE_PATH_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sherpa/2.2.6-ghjeda/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/hepmc/2.06.07-oenich/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/clhep/2.3.4.2-mlhled2/include:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/boost/1.63.0-mlhled2/include
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+HISTCONTROL=ignoredups
+KRB5CCNAME=FILE:/tmp/krb5cc_136700_evzju6
+SRT_HERWIGPATH_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/herwigpp/7.1.4-ghjeda2/share/Herwig
+SRT_PYTHIA8DATA_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/pythia8/230-ghjeda5/share/Pythia8/xmldoc
+ROOTSYS=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/lcg/root/6.10.04-ghjeda/
+TEXINPUTS=:/cvmfs/cms.cern.ch/latex/styles
+SHLVL=3
+HOME=/afs/cern.ch/user/s/sqian
+SHERPA_LIBRARY_PATH=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sherpa/2.2.6-ghjeda/lib/SHERPA-MC
+CMSSW_SEARCH_PATH=/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/src:/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/external/slc6_amd64_gcc630/data:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/src:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/external/slc6_amd64_gcc630/data
+SRT_GOSAMCONTRIB_PATH_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gosamcontrib/2.0-20150803-omkpbe
+SRT_GENREFLEX_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/lcg/root/6.10.04-ghjeda/bin/genreflex
+SRT_G4LEDATA_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-G4EMLOW/6.48/data/G4EMLOW6.48
+VINCIADATA=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/vincia/1.2.02-ghjeda7/share/Vincia/xmldoc
+GENREFLEX=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/lcg/root/6.10.04-ghjeda/bin/genreflex
+ROOT_TTREECACHE_PREFILL=0
+GOSAMCONTRIB_PATH=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gosamcontrib/2.0-20150803-omkpbe
+SRT_QTLIB_SCRAMRT=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/lib
+SRT_EVTGENDATA_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/evtgen/1.6.0-ghjeda7/share
+SRT_ROOT_TTREECACHE_SIZE_SCRAMRTDEL=0
+MALLOC_CONF=lg_chunk:18,lg_dirty_mult:4
+SRT_CMSSW_DATA_PATH_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms
+LCG_GFAL_INFOSYS=lcg-bdii.cern.ch:2170
+LOGNAME=sqian
+HEPPDT_PARAM_PATH=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/heppdt/3.03.00
+PYTHONPATH=/cvmfs/cms.cern.ch/share/overrides/python:/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/python:/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/lib/slc6_amd64_gcc630:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/python:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/lib/slc6_amd64_gcc630:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/coral/CORAL_2_3_21-ghjeda7/slc6_amd64_gcc630/python:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/coral/CORAL_2_3_21-ghjeda7/slc6_amd64_gcc630/lib:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/professor2/2.2.1-ghjeda6/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/pyqt/4.11.4-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sherpa/2.2.6-ghjeda/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/rivet/2.5.2-ghjeda4/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/python-ldap/2.4.10-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-matplotlib/1.5.2-njopjo/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sip/4.17-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/llvm/4.0.0-njopjo/lib64/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-sqlalchemy/1.1.4-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-lint/0.25.1-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-dxr/1.0-ghjeda6/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-cx-oracle/5.2.1-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-numpy/1.12.1-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/frontier_client/2.8.20-mlhled2/python/lib:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/das_client/v03.01.00-mlhled2/bin:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/xrootd/4.6.1/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/yoda/1.6.5-ghjeda4/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/lcg/root/6.10.04-ghjeda/lib:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/pyminuit2/0.0.1-ghjeda4/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-PyYAML/3.11-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-pygithub/1.23.0-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-pip/9.0.1-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-dablooms/0.9.1-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-pippkgs_depscipy/3.0-ghjeda8/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-pippkgs/5.0-ghjeda6/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/professor/1.4.0-ghjeda4/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/dbs-client/DBS_2_1_9-mlhled2/lib:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/dbs-client/DBS_2_1_9-mlhled2/lib/DBSAPI:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/cvs2git/5419-mlhled2/lib
+QTLIB=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/qt/4.8.7/lib:/usr/lib64/qt-3.3/lib
+CVS_RSH=ssh
+SCONS_LIB_DIR=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/scons/3.0.1/lib
+SSH_CONNECTION=202.122.33.185 58324 188.185.89.114 22
+MODULESHOME=/usr/share/Modules
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+SRT_SHERPA_LIBRARY_PATH_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sherpa/2.2.6-ghjeda/lib/SHERPA-MC
+SRT_G4NEUTRONXSDATA_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-G4NEUTRONXS/1.4/data/G4NEUTRONXS1.4
+FRONTIER_CLIENT=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/frontier_client/2.8.20-mlhled2/
+CLHEP_PARAM_PATH=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/clhep/2.3.4.2-mlhled2
+SYSTEM_RELEASE=Scientific Linux CERN SLC release 6.10 (Carbon)
+SRT_CSC_TRACK_FINDER_DATA_DIR_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/CSCTrackFinderEmulation/1.2/data/
+SRT_FRONTIER_CLIENT_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/frontier_client/2.8.20-mlhled2/
+HERWIGPATH=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/herwigpp/7.1.4-ghjeda2/share/Herwig
+PYTHIA8DATA=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/pythia8/230-ghjeda5/share/Pythia8/xmldoc
+SRT_ROOT_PATH_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/madgraph5amcatnlo/2.6.0-ghjeda2:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gosamcontrib/2.0-20150803-omkpbe
+SRT_LD_LIBRARY_PATH_SCRAMRTDEL=/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/biglib/slc6_amd64_gcc630:/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/lib/slc6_amd64_gcc630:/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/external/slc6_amd64_gcc630/lib:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/biglib/slc6_amd64_gcc630:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/lib/slc6_amd64_gcc630:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/external/slc6_amd64_gcc630/lib:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/llvm/4.0.0-njopjo/lib64:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gcc/6.3.0/lib64:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/gcc/6.3.0/lib
+SRT_G4SAIDXSDATA_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/geant4-G4SAIDDATA/1.1/data/G4SAIDDATA1.1
+SRT_GIT_TEMPLATE_DIR_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/git/1.8.3.1-oenich/share/git-core/templates
+SRT_OPENBLAS_NUM_THREADS_SCRAMRTDEL=1
+TEXMFHOME=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/rivet/2.5.2-ghjeda4/share/Rivet/texmf
+CMSSW_VERSION=CMSSW_9_3_16
+SRT_PYTHONPATH_SCRAMRTDEL=/cvmfs/cms.cern.ch/share/overrides/python:/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/python:/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/lib/slc6_amd64_gcc630:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/python:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/cmssw/CMSSW_9_3_16/lib/slc6_amd64_gcc630:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/coral/CORAL_2_3_21-ghjeda7/slc6_amd64_gcc630/python:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/coral/CORAL_2_3_21-ghjeda7/slc6_amd64_gcc630/lib:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/professor2/2.2.1-ghjeda6/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/pyqt/4.11.4-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sherpa/2.2.6-ghjeda/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/rivet/2.5.2-ghjeda4/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/python-ldap/2.4.10-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-matplotlib/1.5.2-njopjo/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sip/4.17-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/llvm/4.0.0-njopjo/lib64/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-sqlalchemy/1.1.4-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-lint/0.25.1-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-dxr/1.0-ghjeda6/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-cx-oracle/5.2.1-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-numpy/1.12.1-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/frontier_client/2.8.20-mlhled2/python/lib:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/das_client/v03.01.00-mlhled2/bin:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/xrootd/4.6.1/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/yoda/1.6.5-ghjeda4/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/lcg/root/6.10.04-ghjeda/lib:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/pyminuit2/0.0.1-ghjeda4/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-PyYAML/3.11-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-pygithub/1.23.0-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-pip/9.0.1-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-dablooms/0.9.1-mlhled2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-pippkgs_depscipy/3.0-ghjeda8/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/py2-pippkgs/5.0-ghjeda6/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/professor/1.4.0-ghjeda4/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/dbs-client/DBS_2_1_9-mlhled2/lib:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/cms/dbs-client/DBS_2_1_9-mlhled2/lib/DBSAPI:/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/cvs2git/5419-mlhled2/lib
+SHERPA_SHARE_PATH=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/sherpa/2.2.6-ghjeda/share/SHERPA-MC
+G_BROKEN_FILENAMES=1
+GIT_EXEC_PATH=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/git/1.8.3.1-oenich/libexec/git-core
+CMS_OPENLOOPS_PREFIX=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/openloops/2.0.0
+SRT_VALGRIND_LIB_SCRAMRTDEL=/cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/valgrind/3.12.0-oenich/lib/valgrind
+CMSSW_BASE=/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack
+LOCALRT=/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack
+BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`
+}
+_=/bin/env
+Time in seconds: 7

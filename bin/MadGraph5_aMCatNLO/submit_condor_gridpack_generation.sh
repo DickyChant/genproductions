@@ -9,7 +9,7 @@ workqueue="condor"
 # export CONDOR_DEBUG_PRINT=1
 
 # You can set following variable to keep logs, stdout and sterr for condor jobs (a lot of files)
-export CONDOR_DEBUG_OUTPUT_PATH=""
+export CONDOR_DEBUG_OUTPUT_PATH="/afs/cern.ch/work/s/sqian/condor_log"
 if [ -n "$CONDOR_DEBUG_OUTPUT_PATH" ]; then
   if [ ! -d "$CONDOR_DEBUG_OUTPUT_PATH" ]; then
     echo "ERROR: "$CONDOR_DEBUG_OUTPUT_PATH" directory doesn't exist, please create it before condor run"

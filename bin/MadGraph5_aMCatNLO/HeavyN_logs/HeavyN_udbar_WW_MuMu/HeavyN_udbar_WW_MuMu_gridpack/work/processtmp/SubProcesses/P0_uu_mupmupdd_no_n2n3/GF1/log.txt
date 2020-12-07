@@ -1,0 +1,170 @@
+==== LHAPDF6 USING DEFAULT-TYPE LHAGLUE INTERFACE ====
+LHAPDF 6.2.1 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/lhapdf/6.2.1-ghjeda2/share/LHAPDF/NNPDF31_nnlo_as_0118_CMSW4/NNPDF31_nnlo_as_0118_CMSW4_0000.dat
+NNPDF31_nnlo_as_0118_CMSW4 PDF set, member #0, version 1; LHAPDF ID = 324700
+ ===============================================================
+ INFO: MadFKS read these parameters from FKS_params.dat                                                  
+ ===============================================================
+  > IRPoleCheckThreshold      =   -1.0000000000000000     
+  > PrecisionVirtualAtRunTime =   -1.0000000000000000     
+  > NHelForMCoverHels         =            4
+  > VirtualFraction           =    1.0000000000000000     
+  > MinVirtualFraction        =    5.0000000000000001E-003
+ ===============================================================
+ A PDF is used, so alpha_s(MZ) is going to be modified
+ Old value of alpha_s from param_card:   0.11839999999999999     
+ New value of alpha_s from PDF lhapdf :  0.11800208008122040     
+ using LHAPDF
+WARNING: the value of maxjetflavorspecified in the run_card (  4) is inconsistent with the number of light flavours inthe model. Hence it will be set to:  5
+ *****************************************************
+ *               MadGraph/MadEvent                   *
+ *        --------------------------------           *
+ *          http://madgraph.hep.uiuc.edu             *
+ *          http://madgraph.phys.ucl.ac.be           *
+ *          http://madgraph.roma2.infn.it            *
+ *        --------------------------------           *
+ *                                                   *
+ *          PARAMETER AND COUPLING VALUES            *
+ *                                                   *
+ *****************************************************
+
+  External Params
+  ---------------------------------
+  
+ MU_R =    91.188000000000002     
+ mdl_VeN1 =    1.0000000000000000     
+ mdl_VeN2 =    0.0000000000000000     
+ mdl_VeN3 =    0.0000000000000000     
+ mdl_VmuN1 =    0.0000000000000000     
+ mdl_VmuN2 =    1.0000000000000000     
+ mdl_VmuN3 =    0.0000000000000000     
+ mdl_VtaN1 =    0.0000000000000000     
+ mdl_VtaN2 =    0.0000000000000000     
+ mdl_VtaN3 =    1.0000000000000000     
+ aEWM1 =    127.94000000000000     
+ mdl_Gf =    1.1745600000000000E-005
+ aS =   0.11839999999999999     
+ mdl_ymt =    173.30000000000001     
+ mdl_MZ =    91.187600000000003     
+ mdl_MT =    173.30000000000001     
+ mdl_MH =    125.70000000000000     
+ mdl_mN1 =    300.00000000000000     
+ mdl_mN2 =    500.00000000000000     
+ mdl_mN3 =    1000.0000000000000     
+ mdl_WZ =    2.4952000000000001     
+ mdl_WW =    2.0850000000000000     
+ mdl_WT =    1.3500000000000001     
+ mdl_WH =    4.1700000000000001E-003
+ mdl_WN1 =   0.30299999999999999     
+ mdl_WN2 =    1.5000000000000000     
+ mdl_WN3 =    12.300000000000001     
+  Internal Params
+  ---------------------------------
+  
+ mdl_MZ__exp__2 =    8315.1783937600012     
+ mdl_MZ__exp__4 =    69142191.720053151     
+ mdl_sqrt__2 =    1.4142135623730951     
+ mdl_MH__exp__2 =    15800.490000000002     
+ mdl_complexi =  (  0.0000000000000000     ,  1.0000000000000000     )
+ mdl_MT__exp__2 =    30032.890000000003     
+ mdl_aEW =    7.8161638267938097E-003
+ mdl_MW =    79.951229855436395     
+ mdl_sqrt__aEW =    8.8409070953120020E-002
+ mdl_ee =   0.31340199653167311     
+ mdl_MW__exp__2 =    6392.1991553968237     
+ mdl_sw2 =   0.23126133286644190     
+ mdl_cw =   0.87677743306585976     
+ mdl_sqrt__sw2 =   0.48089638475085450     
+ mdl_sw =   0.48089638475085450     
+ mdl_g1 =   0.35744760838082806     
+ mdl_gN =   0.65170378998386980     
+ mdl_gw =   0.65170378998386980     
+ mdl_vev =    245.36064108945956     
+ mdl_vev__exp__2 =    60201.844195830592     
+ mdl_lam =   0.13122928550662488     
+ mdl_yt =   0.99886929407679126     
+ mdl_muH =    88.883322395149023     
+ mdl_I2a33 =  ( 0.99886929407679126     ,  0.0000000000000000     )
+ mdl_I3a33 =  ( 0.99886929407679126     ,  0.0000000000000000     )
+ mdl_ee__exp__2 =    9.8220811430038843E-002
+ mdl_sw__exp__2 =   0.23126133286644188     
+ mdl_cw__exp__2 =   0.76873866713355821     
+ mdl_yt__exp__2 =   0.99773986664946734     
+  Internal Params evaluated point by point
+  ----------------------------------------
+  
+ mdl_sqrt__aS =   0.34409301068170506     
+ mdl_G__exp__2 =    1.4878582807401259     
+ mdl_G__exp__3 =    1.8148567439626970     
+ mdl_G__exp__4 =    2.2137222635669636     
+  Couplings of SM_HeavyN_NLO
+  ---------------------------------
+  
+  R2GC_185_38 =  -0.00000E+00  -0.11578E-01
+ UVGC_185_27_1ep  0.00000E+00   0.28946E-02
+ UVGC_185_28_1ep -0.00000E+00  -0.57892E-02
+        GC_11 =   0.00000E+00   0.12198E+01
+        GC_24 =   0.00000E+00   0.46082E+00
+        GC_79 =   0.00000E+00   0.00000E+00
+
+ Collider parameters:
+ --------------------
+
+ Running at P P   machine @    13000.000000000000       GeV
+ PDF set = lhapdf 
+ alpha_s(Mz)= 0.1180 running at 3 loops.
+ alpha_s(Mz)= 0.1180 running at 3 loops.
+ Renormalization scale set on event-by-event basis
+ Factorization   scale set on event-by-event basis
+
+
+ Diagram information for  clustering has been set-up for nFKSprocess           1
+ Diagram information for  clustering has been set-up for nFKSprocess           2
+ Diagram information for  clustering has been set-up for nFKSprocess           3
+ Diagram information for  clustering has been set-up for nFKSprocess           4
+ Diagram information for  clustering has been set-up for nFKSprocess           5
+ getting user params
+Enter number of events and iterations: 
+ Number of events and iterations           -1          12
+Enter desired fractional accuracy: 
+ Desired fractional accuracy:    2.9999999999999999E-002
+ Enter alpha, beta for G_soft
+   Enter alpha<0 to set G_soft=1 (no ME soft)
+ for G_soft: alpha=   1.0000000000000000      , beta= -0.10000000000000001     
+ Enter alpha, beta for G_azi
+   Enter alpha>0 to set G_azi=0 (no azi corr)
+ for G_azi: alpha=  -1.0000000000000000      , beta= -0.10000000000000001     
+ Doing the S and H events together
+Suppress amplitude (0 no, 1 yes)? 
+ Using suppressed amplitude.
+Exact helicity sum (0 yes, n = number/event)? 
+ Do MC over helicities for the virtuals
+Enter Configuration Number: 
+Running Configuration Number:    1
+Enter running mode for MINT:
+0 to set-up grids, 1 to integrate, 2 to generate events
+ MINT running mode:           0
+Set the three folding parameters for MINT
+xi_i, phi_i, y_ij
+           1           1           1
+ 'all ', 'born', 'real', 'virt', 'novi' or 'grid'?
+ Enter 'born0' or 'virt0' to perform
+  a pure n-body integration (no S functions)
+ doing the all  of this channel
+ Normal integration (Sfunction != 1)
+ about to integrate           13          -1          12           1
+ imode is            0
+channel    1 :     1 T        0        0  0.1000E+01  0.0000E+00  0.1000E+01
+#--------------------------------------------------------------------------
+#                     FastJet release 3.1.3 [fjcore]
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           http://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the terms of the GNU GPLv2.
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code
+# and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+Error: Status code 143

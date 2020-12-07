@@ -1,0 +1,1280 @@
+Starting job on  Sun Nov 15 08:23:52 CET 2020
+Running on  Linux lxplus603.cern.ch 2.6.32-754.33.1.el6.x86_64 #1 SMP Wed Aug 26 08:48:19 CEST 2020 x86_64 x86_64 x86_64 GNU/Linux
+System release  Scientific Linux CERN SLC release 6.10 (Carbon)
+name: HeavyN_udbar_WW_MuMu
+carddir: cards/HeavyN_udbar_WW_MuMu
+queue: local
+scram_arch: slc6_amd64_gcc630
+cmssw_version: CMSSW_9_3_16
+# On branch master
+# Changed but not updated:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   gridpack_generation.sh
+#	modified:   submit_condor_gridpack_generation.sh
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	HeavyN_udbar_WW_MuMu.log
+#	HeavyN_udbar_WW_MuMu.out
+#	Store_HeavyN/
+#	cards/HeavyN_udbar_WW_MuMu/
+#	gridpack_generation_woremove.sh
+no changes added to commit (use "git add" and/or "git commit -a")
+Current git revision is:
+e7111c81c7b6d13c767e27f72643fca3e54a5d62
+diff --git a/bin/MadGraph5_aMCatNLO/gridpack_generation.sh b/bin/MadGraph5_aMCatNLO/gridpack_generation.sh
+index bbe9be0..9e46207 100755
+--- a/bin/MadGraph5_aMCatNLO/gridpack_generation.sh
++++ b/bin/MadGraph5_aMCatNLO/gridpack_generation.sh
+@@ -90,7 +90,7 @@ make_gridpack () {
+     MGBASEDIR=mgbasedir
+     
+     MG_EXT=".tar.gz"
+-    MG=MG5_aMC_v2.6.5$MG_EXT
++    MG=MG5_aMC_v2.7.2$MG_EXT
+     MGSOURCE=https://cms-project-generators.web.cern.ch/cms-project-generators/$MG
+     
+     MGBASEDIRORIG=$(echo ${MG%$MG_EXT} | tr "." "_")
+@@ -424,6 +424,7 @@ make_gridpack () {
+     if [ -e $CARDSDIR/${name}_param_card.dat ]; then
+       echo "copying custom params file"
+       cp $CARDSDIR/${name}_param_card.dat ./Cards/param_card.dat
++      cat ./Cards/param_card.dat
+     fi
+      
+     if [ "$isnlo" -gt "0" ]; then
+diff --git a/bin/MadGraph5_aMCatNLO/submit_condor_gridpack_generation.sh b/bin/MadGraph5_aMCatNLO/submit_condor_gridpack_generation.sh
+index c345188..0a68f46 100755
+--- a/bin/MadGraph5_aMCatNLO/submit_condor_gridpack_generation.sh
++++ b/bin/MadGraph5_aMCatNLO/submit_condor_gridpack_generation.sh
+@@ -9,7 +9,7 @@ workqueue="condor"
+ # export CONDOR_DEBUG_PRINT=1
+ 
+ # You can set following variable to keep logs, stdout and sterr for condor jobs (a lot of files)
+-export CONDOR_DEBUG_OUTPUT_PATH=""
++export CONDOR_DEBUG_OUTPUT_PATH="/afs/cern.ch/work/s/sqian/condor_log"
+ if [ -n "$CONDOR_DEBUG_OUTPUT_PATH" ]; then
+   if [ ! -d "$CONDOR_DEBUG_OUTPUT_PATH" ]; then
+     echo "ERROR: "$CONDOR_DEBUG_OUTPUT_PATH" directory doesn't exist, please create it before condor run"
+/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO
+patching file models/loop_qcd_qed_sm/restrict_lepton_masses_no_lepton_yukawas.dat
+patching file models/loop_sm/restrict_ckm_no_b_mass.dat
+patching file models/sm/restrict_ckm_lepton_masses.dat
+patching file models/sm/restrict_ckm_lepton_masses_no_b_mass.dat
+patching file models/sm/restrict_ckm_no_b_mass.dat
+patching file models/sm/restrict_lepton_masses_no_b_mass.dat
+patching file Template/NLO/SubProcesses/MCmasses_PYTHIA8.inc
+patching file madgraph/interface/reweight_interface.py
+Hunk #1 FAILED at 747.
+1 out of 1 hunk FAILED -- saving rejects to file madgraph/interface/reweight_interface.py.rej
+patching file madgraph/interface/loop_interface.py
+patching file madgraph/various/systematics.py
+Hunk #1 FAILED at 228.
+Hunk #2 succeeded at 365 (offset 104 lines).
+Hunk #3 succeeded at 539 (offset 123 lines).
+1 out of 3 hunks FAILED -- saving rejects to file madgraph/various/systematics.py.rej
+patching file Template/LO/Source/.make_opts
+Hunk #1 succeeded at 118 (offset 4 lines).
+patching file Template/NLO/Source/make_opts.inc
+patching file madgraph/iolibs/export_v4.py
+Hunk #1 succeeded at 522 (offset 24 lines).
+patching file madgraph/iolibs/template_files/pdf_opendata.f
+patching file madgraph/iolibs/template_files/pdf_wrap_lhapdf.f
+Hunk #2 succeeded at 38 with fuzz 1.
+patching file Template/LO/SubProcesses/refine.sh
+patching file Template/LO/SubProcesses/refine_splitted.sh
+patching file Template/LO/SubProcesses/survey.sh
+patching file Template/NLO/SubProcesses/ajob_template
+patching file Template/NLO/SubProcesses/reweight_xsec_events.local
+patching file Template/LO/Source/.make_opts
+Hunk #1 succeeded at 100 (offset 4 lines).
+patching file Template/LO/Source/PDF/pdf_lhapdf6.cc
+Hunk #1 succeeded at 16 with fuzz 2 (offset 4 lines).
+patching file Template/NLO/Source/PDF/pdf_lhapdf6.cc
+Hunk #1 succeeded at 16 with fuzz 2 (offset 4 lines).
+patching file Template/NLO/Source/make_opts.inc
+patching file madgraph/iolibs/template_files/pdf_wrap_lhapdf.f
+patching file Template/LO/SubProcesses/refine.sh
+Hunk #3 succeeded at 113 with fuzz 2.
+patching file Template/LO/SubProcesses/refine_splitted.sh
+patching file Template/LO/SubProcesses/survey.sh
+patching file Template/NLO/SubProcesses/ajob_template
+patching file Template/NLO/SubProcesses/reweight_xsec_events.local
+patching file madgraph/interface/reweight_interface.py
+Hunk #1 succeeded at 1935 (offset 87 lines).
+patching file madgraph/interface/common_run_interface.py
+Hunk #1 succeeded at 1708 (offset 108 lines).
+patching file Template/LO/SubProcesses/refine.sh
+patching file Template/LO/SubProcesses/refine_splitted.sh
+patching file Template/LO/SubProcesses/survey.sh
+patching file Template/NLO/SubProcesses/ajob_template
+patching file Template/NLO/SubProcesses/reweight_xsec_events.local
+patching file madgraph/various/misc.py
+Hunk #1 succeeded at 455 (offset 53 lines).
+patching file madgraph/interface/amcatnlo_run_interface.py
+Hunk #1 succeeded at 2951 (offset 9 lines).
+patching file madgraph/interface/madevent_interface.py
+Hunk #1 FAILED at 6581.
+Hunk #2 succeeded at 3635 with fuzz 1 (offset -2961 lines).
+1 out of 2 hunks FAILED -- saving rejects to file madgraph/interface/madevent_interface.py.rej
+patching file MadSpin/decay.py
+Reversed (or previously applied) patch detected!  Assume -R? [n] 
+Apply anyway? [n] 
+Skipping patch.
+1 out of 1 hunk ignored -- saving rejects to file MadSpin/decay.py.rej
+patching file Template/NLO/SubProcesses/handling_lhe_events.f
+Reversed (or previously applied) patch detected!  Assume -R? [n] 
+Apply anyway? [n] 
+Skipping patch.
+2 out of 2 hunks ignored -- saving rejects to file Template/NLO/SubProcesses/handling_lhe_events.f.rej
+patching file madgraph/interface/amcatnlo_run_interface.py
+Reversed (or previously applied) patch detected!  Assume -R? [n] 
+Apply anyway? [n] 
+Skipping patch.
+1 out of 1 hunk ignored -- saving rejects to file madgraph/interface/amcatnlo_run_interface.py.rej
+patching file madgraph/interface/reweight_interface.py
+Hunk #1 FAILED at 643.
+Hunk #2 FAILED at 1781.
+2 out of 2 hunks FAILED -- saving rejects to file madgraph/interface/reweight_interface.py.rej
+patching file Template/NLO/SubProcesses/driver_mintFO.f
+Reversed (or previously applied) patch detected!  Assume -R? [n] 
+Apply anyway? [n] 
+Skipping patch.
+1 out of 1 hunk ignored -- saving rejects to file Template/NLO/SubProcesses/driver_mintFO.f.rej
+patching file Template/NLO/SubProcesses/driver_mintMC.f
+Reversed (or previously applied) patch detected!  Assume -R? [n] 
+Apply anyway? [n] 
+Skipping patch.
+1 out of 1 hunk ignored -- saving rejects to file Template/NLO/SubProcesses/driver_mintMC.f.rej
+patching file madgraph/core/helas_objects.py
+Hunk #1 succeeded at 5916 (offset 168 lines).
+patching file MadSpin/interface_madspin.py
+Hunk #1 succeeded at 1204 (offset 15 lines).
+Hunk #2 succeeded at 1212 (offset 15 lines).
+Hunk #3 succeeded at 1222 (offset 15 lines).
+patching file Template/LO/Source/PDF/PhotonFlux.f
+patching file madgraph/interface/madevent_interface.py
+patching file madgraph/interface/madgraph_interface.py
+Hunk #1 succeeded at 6400 (offset 163 lines).
+patching file Template/LO/bin/internal/restore_data
+patching file madgraph/interface/madevent_interface.py
+Hunk #1 succeeded at 6474 (offset 62 lines).
+patching file madgraph/interface/madevent_interface.py
+Hunk #1 succeeded at 3813 (offset 47 lines).
+patching file Template/loop_material/StandAlone/SubProcesses/MadLoopCommons.inc
+patching file MadSpin/interface_madspin.py
+Hunk #1 succeeded at 1279 (offset 15 lines).
+patching file madgraph/interface/common_run_interface.py
+Hunk #1 FAILED at 3678.
+1 out of 1 hunk FAILED -- saving rejects to file madgraph/interface/common_run_interface.py.rej
+patching file MadSpin/interface_madspin.py
+Hunk #1 succeeded at 731 (offset 14 lines).
+************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.7.2                 2020-03-17         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+load MG5 configuration from input/mg5_configuration.txt 
+fastjet-config does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+lhapdf-config does not seem to correspond to a valid lhapdf-config executable. 
+Please set the 'lhapdf' variable to the (absolute) /PATH/TO/lhapdf-config (including lhapdf-config).
+Note that you can still compile and run aMC@NLO with the built-in PDFs
+ MG5_aMC> set lhapdf /PATH/TO/lhapdf-config
+
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+import /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/MG5_aMC_v2_7_2/mgconfigscript
+The import format was not given, so we guess it as command
+set auto_update 0
+save options auto_update
+save configuration file to /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/MG5_aMC_v2_7_2/input/mg5_configuration.txt
+set automatic_html_opening False
+This option will be the default in any output that you are going to create in this session.
+In order to keep this changes permanent please run 'save options'
+set lhapdf /cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/lhapdf/6.2.1-ghjeda2/share/LHAPDF/../../bin/lhapdf-config
+set lhapdf to /cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/lhapdf/6.2.1-ghjeda2/share/LHAPDF/../../bin/lhapdf-config
+save options lhapdf
+save configuration file to /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/MG5_aMC_v2_7_2/input/mg5_configuration.txt
+set run_mode 2
+This option will be the default in any output that you are going to create in this session.
+In order to keep this changes permanent please run 'save options'
+save options
+save configuration file to /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/MG5_aMC_v2_7_2/input/mg5_configuration.txt
+quit
+/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work
+************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.7.2                 2020-03-17         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+load MG5 configuration from MG5_aMC_v2_7_2/input/mg5_configuration.txt 
+None does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+set lhapdf to /cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/lhapdf/6.2.1-ghjeda2/share/LHAPDF/../../bin/lhapdf-config
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+import /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/HeavyN_udbar_WW_MuMu_proc_card.dat
+The import format was not given, so we guess it as command
+import model SM_HeavyN_NLO
+[1;60mINFO: download model from http://feynrules.irmp.ucl.ac.be/raw-attachment/wiki/HeavyN//SM_HeavyN_NLO_UFO.tgz to the following directory: /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/MG5_aMC_v2_7_2/models [0m
+SM_HeavyN_NLO/
+SM_HeavyN_NLO/decays.py
+SM_HeavyN_NLO/parameters.py
+SM_HeavyN_NLO/CT_vertices.py
+SM_HeavyN_NLO/coupling_orders.py
+SM_HeavyN_NLO/lorentz.py
+SM_HeavyN_NLO/object_library.py
+SM_HeavyN_NLO/function_library.py
+SM_HeavyN_NLO/write_param_card.py
+SM_HeavyN_NLO/__init__.py
+SM_HeavyN_NLO/SM_HeavyN_NLO.log
+SM_HeavyN_NLO/vertices.py
+SM_HeavyN_NLO/couplings.py
+SM_HeavyN_NLO/particles.py
+SM_HeavyN_NLO/CT_couplings.py
+SM_HeavyN_NLO/propagators.py
+INFO: load particles 
+INFO: load vertices 
+INFO: The model has interaction violating the charge: LeptonNumber 
+INFO: Change particles name to pass to MG5 convention 
+Defined multiparticle p = g u c d s u~ c~ d~ s~
+Defined multiparticle j = g u c d s u~ c~ d~ s~
+Defined multiparticle l+ = e+ mu+
+Defined multiparticle l- = e- mu-
+Defined multiparticle vl = ve vm vt
+Defined multiparticle vl~ = ve~ vm~ vt~
+[1;34mPass the definition of 'j' and 'p' to 5 flavour scheme.[0m
+Defined multiparticle all = g ghg ghg~ u c d s b u~ c~ d~ s~ b~ a gha gha~ ve vm vt e- mu- ta- ve~ vm~ vt~ e+ mu+ ta+ t t~ z w+ ghz ghwp ghwm h w- ghz~ ghwp~ ghwm~ n1 n2 n3
+define p = g u c d s u~ c~ d~ s~
+Defined multiparticle p = g u c d s u~ c~ d~ s~
+define j = p
+Defined multiparticle j = g u c d s u~ c~ d~ s~
+generate p p > mu+ mu+ j j QED=4 QCD=0 $$ w+ w- / n2 n3 [QCD]
+[1;34mInterpreting 'QED=4' as 'QED<=4'[0m
+[1;34mWARNING: Process: g/u/c/d/s/u~/c~/d~/s~ g/u/c/d/s/u~/c~/d~/s~ > mu+ mu+ g/u/c/d/s/u~/c~/d~/s~ g/u/c/d/s/u~/c~/d~/s~ $$ w+ w- / n2 n3 QCD=0 QED=4 [ all = QCD ] can have real emission processes which are not finite.
+To avoid this, please use multiparticles when generating the process and be sure to include all the following particles in the multiparticle definition:
+ g, b, c, s, u, d, d~, u~, s~, c~, b~ [0m
+INFO: Generating FKS-subtracted matrix elements for born process: u u > mu+ mu+ d d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (1 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: u c > mu+ mu+ d s QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (2 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: u d~ > mu+ mu+ d u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (3 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: u s~ > mu+ mu+ d c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (4 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: c u > mu+ mu+ d s QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (5 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: c c > mu+ mu+ s s QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (6 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: c d~ > mu+ mu+ s u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (7 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: c s~ > mu+ mu+ s c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (8 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: d~ u > mu+ mu+ d u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (9 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: d~ c > mu+ mu+ s u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (10 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: d~ d~ > mu+ mu+ u~ u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (11 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: d~ s~ > mu+ mu+ u~ c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (12 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: s~ u > mu+ mu+ d c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (13 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: s~ c > mu+ mu+ s c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (14 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: s~ d~ > mu+ mu+ u~ c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (15 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: s~ s~ > mu+ mu+ c~ c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (16 / 16) 
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: u u > mu+ mu+ d d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (1 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: u c > mu+ mu+ s d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (2 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: u d~ > mu+ mu+ u~ d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (3 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: u s~ > mu+ mu+ d c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (4 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: c u > mu+ mu+ s d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (5 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: c c > mu+ mu+ s s QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (6 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: c d~ > mu+ mu+ s u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (7 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: c s~ > mu+ mu+ c~ s QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (8 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: d~ u > mu+ mu+ d u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (9 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: d~ c > mu+ mu+ s u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (10 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: d~ d~ > mu+ mu+ u~ u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (11 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: d~ s~ > mu+ mu+ u~ c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (12 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: s~ u > mu+ mu+ d c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (13 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: s~ c > mu+ mu+ s c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (14 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: s~ d~ > mu+ mu+ u~ c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (15 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: s~ s~ > mu+ mu+ c~ c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (16 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generated 16 subprocesses with 304 real emission diagrams, 40 born diagrams and 80 virtual diagrams 
+add process p p > mu- mu- j j QED=4 QCD=0 $$ w+ w- / n2 n3 [QCD]
+[1;34mInterpreting 'QED=4' as 'QED<=4'[0m
+[1;34mWARNING: Process: g/u/c/d/s/u~/c~/d~/s~ g/u/c/d/s/u~/c~/d~/s~ > mu- mu- g/u/c/d/s/u~/c~/d~/s~ g/u/c/d/s/u~/c~/d~/s~ $$ w+ w- / n2 n3 QCD=0 QED=4 [ all = QCD ] can have real emission processes which are not finite.
+To avoid this, please use multiparticles when generating the process and be sure to include all the following particles in the multiparticle definition:
+ g, b, c, s, u, d, d~, u~, s~, c~, b~ [0m
+INFO: Generating FKS-subtracted matrix elements for born process: d d > mu- mu- u u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (1 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: d s > mu- mu- u c QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (2 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: d u~ > mu- mu- u d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (3 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: d c~ > mu- mu- u s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (4 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: s d > mu- mu- u c QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (5 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: s s > mu- mu- c c QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (6 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: s u~ > mu- mu- c d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (7 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: s c~ > mu- mu- c s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (8 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: u~ d > mu- mu- u d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (9 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: u~ s > mu- mu- c d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (10 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: u~ u~ > mu- mu- d~ d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (11 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: u~ c~ > mu- mu- d~ s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (12 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: c~ d > mu- mu- u s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (13 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: c~ s > mu- mu- c s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (14 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: c~ u~ > mu- mu- d~ s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (15 / 16) 
+INFO: Generating FKS-subtracted matrix elements for born process: c~ c~ > mu- mu- s~ s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (16 / 16) 
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: d d > mu- mu- u u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (1 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: d s > mu- mu- c u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (2 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: d u~ > mu- mu- d~ u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (3 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: d c~ > mu- mu- u s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (4 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: s d > mu- mu- c u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (5 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: s s > mu- mu- c c QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (6 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: s u~ > mu- mu- c d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (7 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: s c~ > mu- mu- s~ c QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (8 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: u~ d > mu- mu- u d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (9 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: u~ s > mu- mu- c d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (10 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: u~ u~ > mu- mu- d~ d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (11 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: u~ c~ > mu- mu- d~ s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (12 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: c~ d > mu- mu- u s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (13 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: c~ s > mu- mu- c s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (14 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: c~ u~ > mu- mu- d~ s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (15 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generating virtual matrix elements using MadLoop: 
+INFO: Generating virtual matrix element with MadLoop for process: c~ c~ > mu- mu- s~ s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (16 / 16) 
+[1;34mWARNING: Some loop diagrams contributing to this process are discarded because they are not pure (QCD)-perturbation.
+Make sure you did not want to include them. [0m
+INFO: Generated 16 subprocesses with 304 real emission diagrams, 40 born diagrams and 80 virtual diagrams 
+output HeavyN_udbar_WW_MuMu -nojpeg
+[1mFirst output using loop matrix-elements has been detected. Now asking for loop reduction:[0m
+For loop computations, MadLoop requires dedicated tools to perform the reduction of loop Feynman diagrams using OPP-based and/or TIR approaches.
+
+Which one do you want to install? (this needs to be done only once)
+1. [34mcuttools  (OPP) [0711.3596]  [0m : will be installed (required)
+2. [34miregi     (TIR) [1405.0301]  [0m : will be installed (required)
+3. [34mninja     (OPP) [1403.1229]  [0m : [92mwill be installed [0m(recommended)
+4. [34mcollier   (TIR) [1604.06792] [0m : [92mwill be installed [0m(recommended)
+5. [34mgolem     (TIR) [0807.0605]  [0m : [91mdo not install[0m
+You can:
+ -> hit 'enter' to proceed
+ -> type a number to cycle its options
+ -> enter the following command:
+    [34m{tool_name}[0m [[34minstall[0m|[34mnoinstall[0m|[34m{prefixed_installation_path}[0m]
+
+[1m[91mIf you are unsure about what this question means, just type enter to proceed. [0m
+[1;34mfound line : display multiparticles[0m
+[1;34mThis answer is not valid for current question. Keep it for next question and use here default: 0[0m
+install ninja
+[1m   You are installing 'ninja', please cite ref(s): [92marXiv:1203.0291, arXiv:1403.1229, arXiv:1604.01363[0m. [0m
+Downloading the HEPToolInstaller at:
+   http://madgraph.phys.ucl.ac.be/Downloads/HEPToolsInstaller/HEPToolsInstaller_V136.tar.gz
+Now installing ninja. Be patient...
+[1;32mninja successfully installed in /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/MG5_aMC_v2_7_2/HEPTools.[0m
+save configuration file to /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/MG5_aMC_v2_7_2/input/mg5_configuration.txt
+set golem ''
+save options golem
+save configuration file to /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/MG5_aMC_v2_7_2/input/mg5_configuration.txt
+save options golem
+save configuration file to /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/MG5_aMC_v2_7_2/input/mg5_configuration.txt
+install collier
+[1m   You are installing 'collier', please cite ref(s): [92marXiv:1604.06792[0m. [0m
+Downloading the HEPToolInstaller at:
+   http://madgraph.phys.ucl.ac.be/Downloads/HEPToolsInstaller/HEPToolsInstaller_V136.tar.gz
+Now installing collier. Be patient...
+[1;32mcollier successfully installed in /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/MG5_aMC_v2_7_2/HEPTools.[0m
+save configuration file to /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/MG5_aMC_v2_7_2/input/mg5_configuration.txt
+INFO: Writing out the aMC@NLO code, using optimized Loops 
+INFO: initialize a new directory: HeavyN_udbar_WW_MuMu 
+INFO: remove old information in HeavyN_udbar_WW_MuMu 
+[1mINFO: Compiling CutTools. This has to be done only once and can take a couple of minutes. [0m
+[1mINFO: Compiling IREGI. This has to be done only once and can take a couple of minutes. [0m
+INFO: Generating real emission matrix-elements... 
+INFO: Generating Helas calls for FKS process: u u > mu+ mu+ d d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (1 / 32) 
+INFO: Processing color information for process: u u > mu+ mu+ d d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: u c > mu+ mu+ s d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (2 / 32) 
+INFO: Processing color information for process: u c > mu+ mu+ s d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: u d~ > mu+ mu+ u~ d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (3 / 32) 
+INFO: Processing color information for process: u d~ > mu+ mu+ u~ d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: u s~ > mu+ mu+ d c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (4 / 32) 
+INFO: Processing color information for process: u s~ > mu+ mu+ d c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: c u > mu+ mu+ s d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (5 / 32) 
+INFO: Processing color information for process: c u > mu+ mu+ s d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: c c > mu+ mu+ s s QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (6 / 32) 
+INFO: Generating Helas calls for FKS process: c d~ > mu+ mu+ s u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (7 / 32) 
+INFO: Generating Helas calls for FKS process: c s~ > mu+ mu+ c~ s QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (8 / 32) 
+INFO: Generating Helas calls for FKS process: d~ u > mu+ mu+ d u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (9 / 32) 
+INFO: Processing color information for process: d~ u > mu+ mu+ d u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: d~ c > mu+ mu+ s u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (10 / 32) 
+INFO: Reusing existing color information for process: d~ c > mu+ mu+ s u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: d~ d~ > mu+ mu+ u~ u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (11 / 32) 
+INFO: Processing color information for process: d~ d~ > mu+ mu+ u~ u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: d~ s~ > mu+ mu+ u~ c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (12 / 32) 
+INFO: Processing color information for process: d~ s~ > mu+ mu+ u~ c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: s~ u > mu+ mu+ d c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (13 / 32) 
+INFO: Generating Helas calls for FKS process: s~ c > mu+ mu+ s c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (14 / 32) 
+INFO: Generating Helas calls for FKS process: s~ d~ > mu+ mu+ u~ c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (15 / 32) 
+INFO: Processing color information for process: s~ d~ > mu+ mu+ u~ c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: s~ s~ > mu+ mu+ c~ c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (16 / 32) 
+INFO: Generating Helas calls for FKS process: d d > mu- mu- u u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (17 / 32) 
+INFO: Reusing existing color information for process: d d > mu- mu- u u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: d s > mu- mu- c u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (18 / 32) 
+INFO: Reusing existing color information for process: d s > mu- mu- c u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: d u~ > mu- mu- d~ u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (19 / 32) 
+INFO: Reusing existing color information for process: d u~ > mu- mu- d~ u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: d c~ > mu- mu- u s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (20 / 32) 
+INFO: Reusing existing color information for process: d c~ > mu- mu- u s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: s d > mu- mu- c u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (21 / 32) 
+INFO: Reusing existing color information for process: s d > mu- mu- c u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: s s > mu- mu- c c QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (22 / 32) 
+INFO: Generating Helas calls for FKS process: s u~ > mu- mu- c d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (23 / 32) 
+INFO: Generating Helas calls for FKS process: s c~ > mu- mu- s~ c QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (24 / 32) 
+INFO: Generating Helas calls for FKS process: u~ d > mu- mu- u d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (25 / 32) 
+INFO: Reusing existing color information for process: u~ d > mu- mu- u d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: u~ s > mu- mu- c d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (26 / 32) 
+INFO: Reusing existing color information for process: u~ s > mu- mu- c d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: u~ u~ > mu- mu- d~ d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (27 / 32) 
+INFO: Reusing existing color information for process: u~ u~ > mu- mu- d~ d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: u~ c~ > mu- mu- d~ s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (28 / 32) 
+INFO: Reusing existing color information for process: u~ c~ > mu- mu- d~ s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: c~ d > mu- mu- u s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (29 / 32) 
+INFO: Generating Helas calls for FKS process: c~ s > mu- mu- c s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (30 / 32) 
+INFO: Generating Helas calls for FKS process: c~ u~ > mu- mu- d~ s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (31 / 32) 
+INFO: Reusing existing color information for process: c~ u~ > mu- mu- d~ s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating Helas calls for FKS process: c~ c~ > mu- mu- s~ s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 (32 / 32) 
+INFO: ... Done 
+INFO: Writing files in P0_uu_mupmupdd_no_n2n3 (1 / 20) 
+INFO: Creating files in directory V0_uu_mupmupdd_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L2,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: u u > mu+ mu+ d d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: u u > mu+ mu+ d d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_uc_mupmupsd_no_n2n3 (2 / 20) 
+INFO: Creating files in directory V0_uc_mupmupsd_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L2,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: u c > mu+ mu+ s d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: u c > mu+ mu+ s d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_udx_mupmupuxd_no_n2n3 (3 / 20) 
+INFO: Creating files in directory V0_udx_mupmupuxd_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L1,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: u d~ > mu+ mu+ u~ d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: u d~ > mu+ mu+ u~ d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_usx_mupmupdcx_no_n2n3 (4 / 20) 
+INFO: Creating files in directory V0_usx_mupmupdcx_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L1,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: u s~ > mu+ mu+ d c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: u s~ > mu+ mu+ d c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_cu_mupmupsd_no_n2n3 (5 / 20) 
+INFO: Creating files in directory V0_cu_mupmupsd_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L2,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: c u > mu+ mu+ s d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: c u > mu+ mu+ s d QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_dxu_mupmupdux_no_n2n3 (6 / 20) 
+INFO: Creating files in directory V0_dxu_mupmupdux_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L2,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: d~ u > mu+ mu+ d u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: d~ u > mu+ mu+ d u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_dxc_mupmupsux_no_n2n3 (7 / 20) 
+INFO: Creating files in directory V0_dxc_mupmupsux_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L2,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: d~ c > mu+ mu+ s u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: d~ c > mu+ mu+ s u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_dxdx_mupmupuxux_no_n2n3 (8 / 20) 
+INFO: Creating files in directory V0_dxdx_mupmupuxux_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L1,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: d~ d~ > mu+ mu+ u~ u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: d~ d~ > mu+ mu+ u~ u~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_dxsx_mupmupuxcx_no_n2n3 (9 / 20) 
+INFO: Creating files in directory V0_dxsx_mupmupuxcx_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L1,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: d~ s~ > mu+ mu+ u~ c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: d~ s~ > mu+ mu+ u~ c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_sxdx_mupmupuxcx_no_n2n3 (10 / 20) 
+INFO: Creating files in directory V0_sxdx_mupmupuxcx_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L1,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: s~ d~ > mu+ mu+ u~ c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: s~ d~ > mu+ mu+ u~ c~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_dd_mummumuu_no_n2n3 (11 / 20) 
+INFO: Creating files in directory V0_dd_mummumuu_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L2,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: d d > mu- mu- u u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: d d > mu- mu- u u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_ds_mummumcu_no_n2n3 (12 / 20) 
+INFO: Creating files in directory V0_ds_mummumcu_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L2,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: d s > mu- mu- c u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: d s > mu- mu- c u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_dux_mummumdxu_no_n2n3 (13 / 20) 
+INFO: Creating files in directory V0_dux_mummumdxu_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L1,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: d u~ > mu- mu- d~ u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: d u~ > mu- mu- d~ u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_dcx_mummumusx_no_n2n3 (14 / 20) 
+INFO: Creating files in directory V0_dcx_mummumusx_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L1,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: d c~ > mu- mu- u s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: d c~ > mu- mu- u s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_sd_mummumcu_no_n2n3 (15 / 20) 
+INFO: Creating files in directory V0_sd_mummumcu_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L2,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: s d > mu- mu- c u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: s d > mu- mu- c u QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_uxd_mummumudx_no_n2n3 (16 / 20) 
+INFO: Creating files in directory V0_uxd_mummumudx_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L2,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: u~ d > mu- mu- u d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: u~ d > mu- mu- u d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_uxs_mummumcdx_no_n2n3 (17 / 20) 
+INFO: Creating files in directory V0_uxs_mummumcdx_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L2,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: u~ s > mu- mu- c d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: u~ s > mu- mu- c d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_uxux_mummumdxdx_no_n2n3 (18 / 20) 
+INFO: Creating files in directory V0_uxux_mummumdxdx_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L1,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: u~ u~ > mu- mu- d~ d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: u~ u~ > mu- mu- d~ d~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_uxcx_mummumdxsx_no_n2n3 (19 / 20) 
+INFO: Creating files in directory V0_uxcx_mummumdxsx_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L1,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: u~ c~ > mu- mu- d~ s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: u~ c~ > mu- mu- d~ s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Writing files in P0_cxux_mummumdxsx_no_n2n3 (20 / 20) 
+INFO: Creating files in directory V0_cxux_mummumdxsx_no_n2n3 
+ALOHA: aloha creates FFV1 set of routines with options: L1,P0
+INFO: Computing diagram color coefficients 
+INFO: Drawing loop Feynman diagrams for Process: c~ u~ > mu- mu- d~ s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+INFO: Generating born Feynman diagrams for Process: c~ u~ > mu- mu- d~ s~ QCD=0 QED<=4 [ all = QCD ] $$ w+ w- / n2 n3 
+History written to /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/HeavyN_udbar_WW_MuMu/Cards/proc_card_mg5.dat
+ALOHA: aloha creates FFV2 routines
+ALOHA: aloha creates FFV1 routines
+save configuration file to /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/HeavyN_udbar_WW_MuMu/Cards/amcatnlo_configuration.txt
+INFO: Use Fortran compiler gfortran 
+INFO: Use c++ compiler g++ 
+INFO: Generate web pages 
+INFO: Compiling StdHEP. This has to be done only once. 
+INFO: Done. 
+Type "launch" to generate events from this process, or see
+/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/HeavyN_udbar_WW_MuMu/README
+Run "open index.html" to see more information about this process.
+display multiparticles
+Multiparticle labels:
+all = g ghg ghg~ u c d s b u~ c~ d~ s~ b~ a gha gha~ ve vm vt e- mu- ta- ve~ vm~ vt~ e+ mu+ ta+ t t~ z w+ ghz ghwp ghwm h w- ghz~ ghwp~ ghwm~ n1 n2 n3
+l- = e- mu-
+j = g u c d s u~ c~ d~ s~
+vl = ve vm vt
+l+ = e+ mu+
+p = g u c d s u~ c~ d~ s~
+vl~ = ve~ vm~ vt~
+quit
+copying generated process to working directory
+
+        WARNING: You've chosen not to use the PDF sets recommended for 2017 production!
+        If this isn't intentional, and you prefer to use the recommended sets,
+        insert the following lines into your process-name_run_card.dat:
+
+            '$DEFAULT_PDF_SETS = lhaid'
+            '$DEFAULT_PDF_MEMBERS = reweight_PDF'
+        
+copying run_card.dat file
+copying custom FKS_params.dat file
+copying custom params file
+######################################################################
+## PARAM_CARD AUTOMATICALY GENERATED BY MG5 FOLLOWING UFO MODEL   ####
+######################################################################
+##                                                                  ##
+##  Width set on Auto will be computed following the information    ##
+##        present in the decay.py files of the model.               ##
+##        See  arXiv:1402.1178 for more details.                    ##
+##                                                                  ##
+######################################################################
+
+###################################
+## INFORMATION FOR LOOP
+###################################
+Block loop 
+    1 9.118800e+01 # MU_R 
+
+###################################
+## INFORMATION FOR MASS
+###################################
+Block mass
+    5 4.700000e+00 # MB 
+    6 1.729000e+02 # MT
+   15 1.777000e+00 # MTA 
+   23 9.118760e+01 # MZ 
+   25 1.251000e+02 # MH 
+  9900012 3.000000e+02 # mN1 
+  9900014 1.000000e+10 # mN2 
+  9900016 1.000000e+10 # mN3 
+## Dependent parameters, given by model restrictions.
+## Those values should be edited following the 
+## analytical expression. MG5 ignores those values 
+## but they are important for interfacing the output of MG5
+## to external program such as Pythia.
+  1 0.000000e+00 # d : 0.0 
+  2 0.000000e+00 # u : 0.0 
+  3 0.000000e+00 # s : 0.0 
+  4 0.000000e+00 # c : 0.0 
+  5 0.000000e+00 # b : 0.0 
+  11 0.000000e+00 # e- : 0.0 
+  12 0.000000e+00 # ve : 0.0 
+  13 0.000000e+00 # mu- : 0.0 
+  14 0.000000e+00 # vm : 0.0 
+  15 0.000000e+00 # ta- : 0.0 
+  16 0.000000e+00 # vt : 0.0 
+  21 0.000000e+00 # g : 0.0 
+  22 0.000000e+00 # a : 0.0 
+  24 7.995123e+01 # w+ : cmath.sqrt(MZ__exp__2/2. + cmath.sqrt(MZ__exp__4/4. - (aEW*cmath.pi*MZ__exp__2)/(Gf*sqrt__2))) 
+  9000002 9.118760e+01 # ghz : MZ 
+  9000003 7.995123e+01 # ghwp : MW 
+  9000004 7.995123e+01 # ghwm : MW 
+
+###################################
+## INFORMATION FOR NUMIXING
+###################################
+Block numixing 
+    1 0.000000e+00 # VeN1 
+    2 0.000000e+00 # VeN2 
+    3 0.000000e+00 # VeN3 
+    4 1.000000e+00 # VmuN1 
+    5 1.000000e+00 # VmuN2 
+    6 1.000000e+00 # VmuN3 
+    7 0.000000e+00 # VtaN1 
+    8 0.000000e+00 # VtaN2 
+    9 0.000000e+00 # VtaN3 
+
+###################################
+## INFORMATION FOR SMINPUTS
+###################################
+Block sminputs 
+    1 1.3250700e+02 # aEWM1 
+    2 1.166390e-05 # Gf 
+    3 1.180000e-01 # aS 
+
+###################################
+## INFORMATION FOR YUKAWA
+###################################
+Block yukawa 
+    6 1.733000e+02 # ymt 
+
+###################################
+## INFORMATION FOR DECAY
+###################################
+DECAY   6 1.350000e+00 # WT 
+DECAY  23 2.495200e+00 # WZ 
+DECAY  24 2.085000e+00 # WW 
+DECAY  25 4.170000e-03 # WH 
+DECAY 9900012 3.030000e-01 # WN1 
+DECAY 9900014 1.500000e+00 # WN2 
+DECAY 9900016 1.230000e+01 # WN3 
+## Dependent parameters, given by model restrictions.
+## Those values should be edited following the 
+## analytical expression. MG5 ignores those values 
+## but they are important for interfacing the output of MG5
+## to external program such as Pythia.
+DECAY  1 0.000000e+00 # d : 0.0 
+DECAY  2 0.000000e+00 # u : 0.0 
+DECAY  3 0.000000e+00 # s : 0.0 
+DECAY  4 0.000000e+00 # c : 0.0 
+DECAY  5 0.000000e+00 # b : 0.0 
+DECAY  11 0.000000e+00 # e- : 0.0 
+DECAY  12 0.000000e+00 # ve : 0.0 
+DECAY  13 0.000000e+00 # mu- : 0.0 
+DECAY  14 0.000000e+00 # vm : 0.0 
+DECAY  15 0.000000e+00 # ta- : 0.0 
+DECAY  16 0.000000e+00 # vt : 0.0 
+DECAY  21 0.000000e+00 # g : 0.0 
+DECAY  22 0.000000e+00 # a : 0.0 
+DECAY  9000002 2.495200e+00 # ghz : WZ 
+DECAY  9000003 2.085000e+00 # ghwp : WW 
+DECAY  9000004 2.085000e+00 # ghwm : WW 
+#===========================================================
+# QUANTUM NUMBERS OF NEW STATE(S) (NON SM PDG CODE)
+#===========================================================
+
+Block QNUMBERS 9000001  # gha 
+        1 0  # 3 times electric charge
+        2 1  # number of spin states (2S+1)
+        3 1  # colour rep (1: singlet, 3: triplet, 8: octet)
+        4 1  # Particle/Antiparticle distinction (0=own anti)
+Block QNUMBERS 9000002  # ghz 
+        1 0  # 3 times electric charge
+        2 1  # number of spin states (2S+1)
+        3 1  # colour rep (1: singlet, 3: triplet, 8: octet)
+        4 1  # Particle/Antiparticle distinction (0=own anti)
+Block QNUMBERS 9000003  # ghwp 
+        1 3  # 3 times electric charge
+        2 1  # number of spin states (2S+1)
+        3 1  # colour rep (1: singlet, 3: triplet, 8: octet)
+        4 1  # Particle/Antiparticle distinction (0=own anti)
+Block QNUMBERS 9000004  # ghwm 
+        1 -3  # 3 times electric charge
+        2 1  # number of spin states (2S+1)
+        3 1  # colour rep (1: singlet, 3: triplet, 8: octet)
+        4 1  # Particle/Antiparticle distinction (0=own anti)
+Block QNUMBERS 82  # ghg 
+        1 0  # 3 times electric charge
+        2 1  # number of spin states (2S+1)
+        3 8  # colour rep (1: singlet, 3: triplet, 8: octet)
+        4 1  # Particle/Antiparticle distinction (0=own anti)
+Block QNUMBERS 9900012  # n1 
+        1 0  # 3 times electric charge
+        2 2  # number of spin states (2S+1)
+        3 1  # colour rep (1: singlet, 3: triplet, 8: octet)
+        4 0  # Particle/Antiparticle distinction (0=own anti)
+Block QNUMBERS 9900014  # n2 
+        1 0  # 3 times electric charge
+        2 2  # number of spin states (2S+1)
+        3 1  # colour rep (1: singlet, 3: triplet, 8: octet)
+        4 0  # Particle/Antiparticle distinction (0=own anti)
+Block QNUMBERS 9900016  # n3 
+        1 0  # 3 times electric charge
+        2 2  # number of spin states (2S+1)
+        3 1  # colour rep (1: singlet, 3: triplet, 8: octet)
+        4 0  # Particle/Antiparticle distinction (0=own anti)
+starting NLO mode
+No module named madgraph
+INFO: ************************************************************
+*                                                          *
+*           W E L C O M E  to  M A D G R A P H 5           *
+*                       a M C @ N L O                      *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 5.2.7.2               20xx-xx-xx         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*                 http://amcatnlo.cern.ch                  *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*                                                          *
+************************************************************ 
+INFO: load configuration from /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/processtmp/Cards/amcatnlo_configuration.txt  
+INFO: load configuration from /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/MG5_aMC_v2_7_2/input/mg5_configuration.txt  
+INFO: load configuration from /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/processtmp/Cards/amcatnlo_configuration.txt  
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+launch -n pilotrun
+The following switches determine which programs are run:
+/=============================================================================\
+1. Type of perturbative computation         [1m      order[0m = [32mNLO[0m         
+2. No MC@[N]LO matching / event generation  [1mfixed_order[0m = [32mOFF[0m         
+3. Shower the generated events              [1m     shower[0m = [31mPYTHIA8[0m     
+4. Decay onshell particles                  [1m    madspin[0m = [31mOFF[0m         
+5. Add weights to events for new hypp.      [1m   reweight[0m = [31mOFF[0m         
+6. Run MadAnalysis5 on the events generated [1mmadanalysis[0m = [01mNot Avail.[0m  
+\=============================================================================/
+Either type the switch number (1 to 6) to change its setting,
+Set any switch explicitly (e.g. type 'fixed_order=ON' at the prompt)
+Type 'help' for the list of all valid option
+Type '0', 'auto', 'done' or just press enter when you are done.[60s to answer] 
+>The following switches determine which programs are run:
+/=============================================================================\
+1. Type of perturbative computation         [1m      order[0m = [32mNLO[0m         
+2. No MC@[N]LO matching / event generation  [1mfixed_order[0m = [32mOFF[0m         
+3. Shower the generated events              [1m     shower[0m = [32mOFF[0m         
+4. Decay onshell particles                  [1m    madspin[0m = [31mOFF[0m         
+5. Add weights to events for new hypp.      [1m   reweight[0m = [31mOFF[0m         
+6. Run MadAnalysis5 on the events generated [1mmadanalysis[0m = [01mNot Avail.[0m  
+\=============================================================================/
+Either type the switch number (1 to 6) to change its setting,
+Set any switch explicitly (e.g. type 'fixed_order=ON' at the prompt)
+Type 'help' for the list of all valid option
+Type '0', 'auto', 'done' or just press enter when you are done.
+>The following switches determine which programs are run:
+/=============================================================================\
+1. Type of perturbative computation         [1m      order[0m = [32mNLO[0m         
+2. No MC@[N]LO matching / event generation  [1mfixed_order[0m = [32mOFF[0m         
+3. Shower the generated events              [1m     shower[0m = [32mOFF[0m         
+4. Decay onshell particles                  [1m    madspin[0m = [31mOFF[0m         
+5. Add weights to events for new hypp.      [1m   reweight[0m = [31mOFF[0m         
+6. Run MadAnalysis5 on the events generated [1mmadanalysis[0m = [01mNot Avail.[0m  
+\=============================================================================/
+Either type the switch number (1 to 6) to change its setting,
+Set any switch explicitly (e.g. type 'fixed_order=ON' at the prompt)
+Type 'help' for the list of all valid option
+Type '0', 'auto', 'done' or just press enter when you are done.
+>INFO: will run in mode: noshower 
+[1;34mWARNING: You have chosen not to run a parton shower.
+    NLO events without showering are NOT physical.
+    Please, shower the LesHouches events before using them for physics analyses.
+    You have to choose NOW which parton-shower you WILL use and specify it in the run_card. [0m
+[1;31mERROR: Current param_card is not valid. We are going to use the default one. [0m
+[1;31mERROR: problem detected: mass (5,) is already define to 4.7 impossible to assign 0.0 [0m
+Do you want to edit a card (press enter to bypass editing)?
+/------------------------------------------------------------\
+|  [31m1[0m. param : [32mparam_card.dat[0m                                 |
+|  [31m2[0m. run   : [32mrun_card.dat[0m                                   |
+\------------------------------------------------------------/
+ you can also
+   - enter the path to a valid card or banner.
+   - use the 'set' command to modify a parameter directly.
+     The set option works only for param_card and run_card.
+     Type 'help set' for more information on this command.
+   - call an external program (ASperGE/MadWidth/...).
+     Type 'help' for the list of available command
+ [[4m0[0m, done, 1, param, 2, run, enter path][90s to answer] 
+>[1;34mWARNING: invalid set command param_card  mass 5 4.700000e+00 # MB (failed to identify LHA information) [0m
+Do you want to edit a card (press enter to bypass editing)?
+/------------------------------------------------------------\
+|  [31m1[0m. param : [32mparam_card.dat[0m                                 |
+|  [31m2[0m. run   : [32mrun_card.dat[0m                                   |
+\------------------------------------------------------------/
+ you can also
+   - enter the path to a valid card or banner.
+   - use the 'set' command to modify a parameter directly.
+     The set option works only for param_card and run_card.
+     Type 'help set' for more information on this command.
+   - call an external program (ASperGE/MadWidth/...).
+     Type 'help' for the list of available command
+ [[4m0[0m, done, 1, param, 2, run, enter path] 
+>[1;34mWARNING: invalid set command param_card  mass 6 1.729000e+02 # MT (failed to identify LHA information) [0m
+Do you want to edit a card (press enter to bypass editing)?
+/------------------------------------------------------------\
+|  [31m1[0m. param : [32mparam_card.dat[0m                                 |
+|  [31m2[0m. run   : [32mrun_card.dat[0m                                   |
+\------------------------------------------------------------/
+ you can also
+   - enter the path to a valid card or banner.
+   - use the 'set' command to modify a parameter directly.
+     The set option works only for param_card and run_card.
+     Type 'help set' for more information on this command.
+   - call an external program (ASperGE/MadWidth/...).
+     Type 'help' for the list of available command
+ [[4m0[0m, done, 1, param, 2, run, enter path] 
+>[1;34mWARNING: invalid set command param_card  mass   15 1.777000e+00 # MTA (failed to identify LHA information) [0m
+Do you want to edit a card (press enter to bypass editing)?
+/------------------------------------------------------------\
+|  [31m1[0m. param : [32mparam_card.dat[0m                                 |
+|  [31m2[0m. run   : [32mrun_card.dat[0m                                   |
+\------------------------------------------------------------/
+ you can also
+   - enter the path to a valid card or banner.
+   - use the 'set' command to modify a parameter directly.
+     The set option works only for param_card and run_card.
+     Type 'help set' for more information on this command.
+   - call an external program (ASperGE/MadWidth/...).
+     Type 'help' for the list of available command
+ [[4m0[0m, done, 1, param, 2, run, enter path] 
+>[1;34mWARNING: invalid set command param_card  mass   23 9.118760e+01 # MZ (failed to identify LHA information) [0m
+Do you want to edit a card (press enter to bypass editing)?
+/------------------------------------------------------------\
+|  [31m1[0m. param : [32mparam_card.dat[0m                                 |
+|  [31m2[0m. run   : [32mrun_card.dat[0m                                   |
+\------------------------------------------------------------/
+ you can also
+   - enter the path to a valid card or banner.
+   - use the 'set' command to modify a parameter directly.
+     The set option works only for param_card and run_card.
+     Type 'help set' for more information on this command.
+   - call an external program (ASperGE/MadWidth/...).
+     Type 'help' for the list of available command
+ [[4m0[0m, done, 1, param, 2, run, enter path] 
+>[1;34mWARNING: invalid set command param_card  mass  25 1.251000e+02 # MH (failed to identify LHA information) [0m
+Do you want to edit a card (press enter to bypass editing)?
+/------------------------------------------------------------\
+|  [31m1[0m. param : [32mparam_card.dat[0m                                 |
+|  [31m2[0m. run   : [32mrun_card.dat[0m                                   |
+\------------------------------------------------------------/
+ you can also
+   - enter the path to a valid card or banner.
+   - use the 'set' command to modify a parameter directly.
+     The set option works only for param_card and run_card.
+     Type 'help set' for more information on this command.
+   - call an external program (ASperGE/MadWidth/...).
+     Type 'help' for the list of available command
+ [[4m0[0m, done, 1, param, 2, run, enter path] 
+>[1;34mWARNING: invalid set command param_card  mass 9900012 3.000000e+02 # mN1 (failed to identify LHA information) [0m
+Do you want to edit a card (press enter to bypass editing)?
+/------------------------------------------------------------\
+|  [31m1[0m. param : [32mparam_card.dat[0m                                 |
+|  [31m2[0m. run   : [32mrun_card.dat[0m                                   |
+\------------------------------------------------------------/
+ you can also
+   - enter the path to a valid card or banner.
+   - use the 'set' command to modify a parameter directly.
+     The set option works only for param_card and run_card.
+     Type 'help set' for more information on this command.
+   - call an external program (ASperGE/MadWidth/...).
+     Type 'help' for the list of available command
+ [[4m0[0m, done, 1, param, 2, run, enter path] 
+>[1;34mWARNING: invalid set command param_card  mass 9900014 1.000000e+10 # mN2 (failed to identify LHA information) [0m
+Do you want to edit a card (press enter to bypass editing)?
+/------------------------------------------------------------\
+|  [31m1[0m. param : [32mparam_card.dat[0m                                 |
+|  [31m2[0m. run   : [32mrun_card.dat[0m                                   |
+\------------------------------------------------------------/
+ you can also
+   - enter the path to a valid card or banner.
+   - use the 'set' command to modify a parameter directly.
+     The set option works only for param_card and run_card.
+     Type 'help set' for more information on this command.
+   - call an external program (ASperGE/MadWidth/...).
+     Type 'help' for the list of available command
+ [[4m0[0m, done, 1, param, 2, run, enter path] 
+>[1;34mWARNING: invalid set command param_card  mass 9900016 1.000000e+10 # mN3 (failed to identify LHA information) [0m
+Do you want to edit a card (press enter to bypass editing)?
+/------------------------------------------------------------\
+|  [31m1[0m. param : [32mparam_card.dat[0m                                 |
+|  [31m2[0m. run   : [32mrun_card.dat[0m                                   |
+\------------------------------------------------------------/
+ you can also
+   - enter the path to a valid card or banner.
+   - use the 'set' command to modify a parameter directly.
+     The set option works only for param_card and run_card.
+     Type 'help set' for more information on this command.
+   - call an external program (ASperGE/MadWidth/...).
+     Type 'help' for the list of available command
+ [[4m0[0m, done, 1, param, 2, run, enter path] 
+>INFO: Update the dependent parameter of the param_card.dat 
+INFO: Starting run 
+INFO: Compiling the code 
+/afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/processtmp/bin/internal/ufomodel/particles.pyc
+write ./param_card.dat
+INFO: Using LHAPDF v6.2.1 interface for PDFs 
+INFO: Compiling source... 
+INFO:           ...done, continuing with P* directories 
+INFO: Compiling directories... 
+INFO: Compiling on 10 cores 
+INFO:  Compiling P0_uu_mupmupdd_no_n2n3... 
+INFO:  Compiling P0_uc_mupmupsd_no_n2n3... 
+INFO:  Compiling P0_udx_mupmupuxd_no_n2n3... 
+INFO:  Compiling P0_usx_mupmupdcx_no_n2n3... 
+INFO:  Compiling P0_cu_mupmupsd_no_n2n3... 
+INFO:  Compiling P0_sxdx_mupmupuxcx_no_n2n3... 
+INFO:  Compiling P0_dxc_mupmupsux_no_n2n3... 
+INFO:  Compiling P0_dxu_mupmupdux_no_n2n3... 
+INFO:  Compiling P0_dxsx_mupmupuxcx_no_n2n3... 
+INFO:  Compiling P0_dxdx_mupmupuxux_no_n2n3... 
+Start waiting for update. (more info in debug mode)
+INFO:     P0_dxdx_mupmupuxux_no_n2n3 done. 
+INFO:  Compiling P0_dd_mummumuu_no_n2n3... 
+INFO:     P0_dxsx_mupmupuxcx_no_n2n3 done. 
+INFO:  Compiling P0_ds_mummumcu_no_n2n3... 
+INFO:     P0_usx_mupmupdcx_no_n2n3 done. 
+INFO:  Compiling P0_dux_mummumdxu_no_n2n3... 
+INFO:     P0_udx_mupmupuxd_no_n2n3 done. 
+INFO:  Compiling P0_dcx_mummumusx_no_n2n3... 
+INFO:     P0_dxc_mupmupsux_no_n2n3 done. 
+INFO:  Compiling P0_sd_mummumcu_no_n2n3... 
+INFO:     P0_uc_mupmupsd_no_n2n3 done. 
+INFO:  Compiling P0_uxd_mummumudx_no_n2n3... 
+INFO:     P0_dxu_mupmupdux_no_n2n3 done. 
+INFO:  Compiling P0_uxs_mummumcdx_no_n2n3... 
+INFO:     P0_uu_mupmupdd_no_n2n3 done. 
+INFO:  Compiling P0_uxux_mummumdxdx_no_n2n3... 
+INFO:     P0_cu_mupmupsd_no_n2n3 done. 
+INFO:  Compiling P0_uxcx_mummumdxsx_no_n2n3... 
+INFO:     P0_sxdx_mupmupuxcx_no_n2n3 done. 
+INFO:  Compiling P0_cxux_mummumdxsx_no_n2n3... 
+INFO:     P0_uxd_mummumudx_no_n2n3 done. 
+INFO:     P0_ds_mummumcu_no_n2n3 done. 
+INFO:     P0_dux_mummumdxu_no_n2n3 done. 
+INFO:     P0_dcx_mummumusx_no_n2n3 done. 
+INFO:     P0_sd_mummumcu_no_n2n3 done. 
+INFO:     P0_dd_mummumuu_no_n2n3 done. 
+INFO:     P0_uxs_mummumcdx_no_n2n3 done. 
+INFO:     P0_uxux_mummumdxdx_no_n2n3 done. 
+INFO:     P0_uxcx_mummumdxsx_no_n2n3 done. 
+INFO:     P0_cxux_mummumdxsx_no_n2n3 done. 
+INFO: Checking test output: 
+INFO: P0_uu_mupmupdd_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_uc_mupmupsd_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_udx_mupmupuxd_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_usx_mupmupdcx_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_cu_mupmupsd_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_dxu_mupmupdux_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_dxc_mupmupsux_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_dxdx_mupmupuxux_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_dxsx_mupmupuxcx_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_sxdx_mupmupuxcx_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_dd_mummumuu_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_ds_mummumcu_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_dux_mummumdxu_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_dcx_mummumusx_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_sd_mummumcu_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_uxd_mummumudx_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_uxs_mummumcdx_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_uxux_mummumdxdx_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_uxcx_mummumdxsx_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: P0_cxux_mummumdxsx_no_n2n3 
+INFO:  Result for test_ME: 
+INFO:    Passed. 
+INFO:  Result for test_MC: 
+INFO:    Passed. 
+INFO:  Result for check_poles: 
+[1;34mWARNING: 0 points have been tried [0m
+INFO: Starting run 
+INFO: Using 10 cores 
+INFO: Cleaning previous results 
+INFO: Generating events without running the shower. 
+INFO: Setting up grids 
+INFO:  Idle: 10,  Running: 10,  Completed: 0 [ current time: 08h39 ] 
+[1;34mWARNING: program /afs/cern.ch/work/s/sqian/genproductions/bin/MadGraph5_aMCatNLO/HeavyN_udbar_WW_MuMu/HeavyN_udbar_WW_MuMu_gridpack/work/processtmp/SubProcesses/P0_sxdx_mupmupuxcx_no_n2n3/ajob1 1 F 0 0 launch ends with non zero status: 1. Stop all computation [0m
+INFO:  Idle: 10,  Running: 9,  Completed: 1 [  5.7s  ] 
+INFO:  Idle: 10,  Running: 6,  Completed: 4 [  5.8s  ] 
+INFO:  Idle: 10,  Running: 5,  Completed: 5 [  5.9s  ] 
+INFO:  Idle: 10,  Running: 4,  Completed: 6 [  5.9s  ] 
+INFO:  Idle: 10,  Running: 3,  Completed: 7 [  5.9s  ] 
+INFO:  Idle: 10,  Running: 2,  Completed: 8 [  5.9s  ] 
+INFO:  Idle: 10,  Running: 0,  Completed: 10 [  6s  ] 

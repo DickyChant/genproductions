@@ -1,0 +1,7 @@
+import model SM_HeavyN_NLO
+define p = g u c d s u~ c~ d~ s~
+define j = p
+generate p p > mu+ mu+ j j QED=4 QCD=0 $$ w+ w- / n2 n3 [QCD]
+add process p p > mu- mu- j j QED=4 QCD=0 $$ w+ w- / n2 n3 [QCD]
+output HeavyN_udbar_WW_MuMu -nojpeg 
+display multiparticles

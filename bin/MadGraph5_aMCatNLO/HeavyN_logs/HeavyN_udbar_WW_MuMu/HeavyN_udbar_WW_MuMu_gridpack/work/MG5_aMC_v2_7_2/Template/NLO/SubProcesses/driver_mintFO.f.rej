@@ -1,0 +1,11 @@
+--- Template/NLO/SubProcesses/driver_mintFO.f	2019-02-04 12:19:42.000000000 +0100
++++ Template/NLO/SubProcesses/driver_mintFO.f	2020-01-31 23:34:54.007582000 +0100
+@@ -186,7 +186,7 @@
+                enddo
+             enddo
+          else
+-            doreweight=do_rwgt_scale.or.do_rwgt_pdf
++            doreweight=do_rwgt_scale.or.do_rwgt_pdf.or.store_rwgt_info
+ c to restore grids:
+             open (unit=12, file='mint_grids',status='old')
+             do kchan=1,nchans

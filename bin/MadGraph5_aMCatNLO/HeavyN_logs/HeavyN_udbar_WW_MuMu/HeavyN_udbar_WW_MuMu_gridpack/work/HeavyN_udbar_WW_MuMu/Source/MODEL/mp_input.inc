@@ -1,0 +1,35 @@
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+c      written by the UFO converter
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+      REAL*16 MP__MDL_SQRT__AS,MP__MDL_G__EXP__2,MP__MDL_G__EXP__3
+     $ ,MP__MDL_G__EXP__4,MP__MDL_MZ__EXP__2,MP__MDL_MZ__EXP__4
+     $ ,MP__MDL_SQRT__2,MP__MDL_MH__EXP__2,MP__MDL_MT__EXP__2
+     $ ,MP__MDL_AEW,MP__MDL_SQRT__AEW,MP__MDL_EE,MP__MDL_MW__EXP__2
+     $ ,MP__MDL_SW2,MP__MDL_CW,MP__MDL_SQRT__SW2,MP__MDL_SW,MP__MDL_G1
+     $ ,MP__MDL_GN,MP__MDL_GW,MP__MDL_VEV,MP__MDL_VEV__EXP__2
+     $ ,MP__MDL_LAM,MP__MDL_YT,MP__MDL_MUH,MP__MDL_EE__EXP__2
+     $ ,MP__MDL_SW__EXP__2,MP__MDL_CW__EXP__2,MP__MDL_YT__EXP__2
+     $ ,MP__MDL_VEN1,MP__MDL_VEN2,MP__MDL_VEN3,MP__MDL_VMUN1
+     $ ,MP__MDL_VMUN2,MP__MDL_VMUN3,MP__MDL_VTAN1,MP__MDL_VTAN2
+     $ ,MP__MDL_VTAN3,MP__AEWM1,MP__MDL_GF,MP__AS,MP__MDL_YMT
+
+      COMMON/MP_PARAMS_R/ MP__MDL_SQRT__AS,MP__MDL_G__EXP__2
+     $ ,MP__MDL_G__EXP__3,MP__MDL_G__EXP__4,MP__MDL_MZ__EXP__2
+     $ ,MP__MDL_MZ__EXP__4,MP__MDL_SQRT__2,MP__MDL_MH__EXP__2
+     $ ,MP__MDL_MT__EXP__2,MP__MDL_AEW,MP__MDL_SQRT__AEW,MP__MDL_EE
+     $ ,MP__MDL_MW__EXP__2,MP__MDL_SW2,MP__MDL_CW,MP__MDL_SQRT__SW2
+     $ ,MP__MDL_SW,MP__MDL_G1,MP__MDL_GN,MP__MDL_GW,MP__MDL_VEV
+     $ ,MP__MDL_VEV__EXP__2,MP__MDL_LAM,MP__MDL_YT,MP__MDL_MUH
+     $ ,MP__MDL_EE__EXP__2,MP__MDL_SW__EXP__2,MP__MDL_CW__EXP__2
+     $ ,MP__MDL_YT__EXP__2,MP__MDL_VEN1,MP__MDL_VEN2,MP__MDL_VEN3
+     $ ,MP__MDL_VMUN1,MP__MDL_VMUN2,MP__MDL_VMUN3,MP__MDL_VTAN1
+     $ ,MP__MDL_VTAN2,MP__MDL_VTAN3,MP__AEWM1,MP__MDL_GF,MP__AS
+     $ ,MP__MDL_YMT
+
+
+      COMPLEX*32 MP__MDL_COMPLEXI,MP__MDL_I2A33,MP__MDL_I3A33
+
+      COMMON/MP_PARAMS_C/ MP__MDL_COMPLEXI,MP__MDL_I2A33,MP__MDL_I3A33
+
+
