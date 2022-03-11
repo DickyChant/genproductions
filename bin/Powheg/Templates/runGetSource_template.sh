@@ -194,7 +194,7 @@ if [ $$jhugen = 1 ]; then
   cp -pr pdfs $${WORKDIR}/$${name}/.
 
 
-  cd ..
+  cd ../.. # Comments from Congqiao. Due to previous commit the directory structure has been changed.
 fi
 
 $patch_6 
