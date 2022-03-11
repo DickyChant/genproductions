@@ -6,6 +6,7 @@ import argparse
 import textwrap
 import fnmatch
 import os.path
+import string
 #import json
 from datetime import datetime
 ###########Needed to check for ultra-legacy sample consistency check############################################
@@ -338,6 +339,33 @@ def evtgen_check(fragment):
         warn = 1
     return warn, err
 
+def run3_checks(fragment,dn):
+    err = 0
+    warn = 0
+    fragment = fragment.replace(" ","")
+    print("======> Run3 Fragment and dataset name checks:")
+    if "comEnergy" in fragment:
+        comline = re.findall('comEnergy=\S+',fragment)
+        if "13600" not in comline[0]:
+            print(comline[0])
+            print("[ERROR] The c.o.m. energy is not specified as 13600 GeV in the fragment")
+            err += 1
+    if "13p6TeV" not in dn:
+        print("[ERROR] The data set name does not contain 13p6TeV for this Run3 request")
+        err += 1
+    return err
+
+def run3_run_card_check(filename_mggpc):
+    err = 0
+    beamenergy1 = os.popen('grep ebeam1 '+filename_mggpc).read()
+    beamenergy2 = os.popen('grep ebeam2 '+filename_mggpc).read()
+    print("======> Run3 run_card check for MG5aMC") 
+    print(beamenergy1,beamenergy2)
+    if "6800" not in beamenergy1 or "6800" not in beamenergy2:
+        print("[ERROR] The beam energy is not specified as 6800 GeV in the run_card")
+        err = 1
+    return err 
+
 def exception_for_ul_check(datatobereplaced,cross_section_fragment):
     new_data = datatobereplaced.replace(" ","")
     new_data = new_data.replace(",generateConcurrently=cms.untracked.bool(True)","")
@@ -359,6 +387,38 @@ def exception_for_ul_check(datatobereplaced,cross_section_fragment):
         new_data = new_data.replace('crossSection=cms.untracked.double(1)','')
         new_data = new_data.replace('crossSection=cms.untracked.double(-1)','')
     return new_data
+
+def vbf_dipole_recoil_check(vbf_lo,vbf_nlo,data_f2,pw_gp,dn):
+    dipole_recoil_flag = 0
+    dipole_recoil = re.findall('SpaceShower:dipoleRecoil.*?\S+\S+',data_f2)
+    warning_dipole = 0
+    error_dipole = 0
+    if "vbf" not in dn.lower():
+        warning_dipole += 1
+        print("[WARNING] VBF not in dataset name.")
+    if len(dipole_recoil):
+        dipole_recoil = dipole_recoil[0].split("=")[1].replace('"', '').replace('\'', '')
+        if "on" in dipole_recoil:
+            dipole_recoil_flag = 1 
+    if pw_gp is False:
+        if vbf_lo and dipole_recoil_flag == 0:
+            warning_dipole = 1
+            print("[WARNING] LO VBF with global recoil --> SpaceShower:dipoleRecoil = 0 SMP/HIG groups are moving to local recoil but currently using global recoil. See https://arxiv.org/pdf/1803.07943.pdf")
+        if vbf_lo and dipole_recoil_flag:
+            print("[OK] LO VBF with local recoil. --> SpaceShower:dipoleRecoil = 1")
+        if vbf_nlo and dipole_recoil_flag == 0:
+            print("[OK] NLO VBF with global recoil --> SpaceShower:dipoleRecoil = 0")
+        if vbf_nlo and dipole_recoil_flag:
+            error_dipole = 1
+            print("[ERROR] NLO VBF with local recoil. --> SpaceShower:dipoleRecoil = 1 aMC@NLO should not be used with local recoil. See https://arxiv.org/pdf/1803.07943.pdf")
+    else:
+        if "vbf" in dn.lower() and dipole_recoil_flag == 0:
+            warning_dipole = 1
+            print("[WARNING] VBF POWHEG with global recoil --> SpaceShower:dipoleRecoil = 0. See https://arxiv.org/pdf/1803.07943.pdf")
+        if "vbf" in dn.lower() and dipole_recoil_flag == 1:
+            print("[OK] VBF POWHEG with local recoil --> SpaceShower:dipoleRecoil = 1.")  
+    return warning_dipole, error_dipole  
+
 
 if args.dev:
     print("Running on McM DEV!\n")
@@ -458,6 +518,8 @@ for num in range(0,len(prepid)):
         mg_nlo = 0
         mcatnlo_flag = 0
         loop_flag = 0
+        vbf_lo = 0
+        vbf_nlo = 0
         knd =  -1
         slha_flag = 0
         grid_points_flag = 0
@@ -522,7 +584,7 @@ for num in range(0,len(prepid)):
         f2 = open(pi+"_tmp","w")
         data_f1 = f1.read()
 
-        if int(os.popen('grep -c FlatRandomEGunProducer '+pi).read()) == 1 or int(os.popen('grep -c FlatRandomPtGunProducer '+pi).read()) == 1: 
+        if int(os.popen('grep -c FlatRandomEGunProducer '+pi).read()) == 1 or int(os.popen('grep -c FlatRandomPtGunProducer '+pi).read()) == 1 or int(os.popen('grep -c Pythia8EGun '+pi).read()) == 1: 
             particle_gun = 1
         if int(os.popen('grep -c -i randomizedparameters '+pi).read()) > 0:
             randomizedparameters = 1
@@ -535,6 +597,7 @@ for num in range(0,len(prepid)):
         if len(cmssw_version[3]) != 2:
            cmssw_version[3] += "0"
         cmssw_version=int(cmssw_version[1]+cmssw_version[2]+cmssw_version[3])
+        data_f2 = re.sub(r'(?m)^ *#.*\n?', '',data_f1)
         concurrency_check_exception_list = ["HIG-RunIISummer20UL16GENAPV-00063",
                                             "HIG-RunIISummer20UL16GEN-00072",
                                             "HIG-RunIISummer20UL17GEN-00007",
@@ -550,9 +613,9 @@ for num in range(0,len(prepid)):
             conc_check_result, tmp_err = concurrency_check(data_f1,pi,cmssw_version)
             error += tmp_err
         else:
-            print("[WARNING] Skipping the concurrency check since these are (wmLHE)GEN-only campaigns or a particle gun or Sherpa Diphoton sample.")
+            print("[WARNING] Skipping the concurrency check since these are (wmLHE)GEN-only campaigns or a particle gun or a Sherpa Diphoton sample.")
             warning += 1
-        data_f2 = re.sub(r'(?m)^ *#.*\n?', '',data_f1)
+#        data_f2 = re.sub(r'(?m)^ *#.*\n?', '',data_f1)
 
         cross_section_fragment = re.findall('crossSection.*?\S+\S+',data_f2)
         if (cross_section_fragment):
@@ -753,6 +816,10 @@ for num in range(0,len(prepid)):
                 fname_p2 = my_path+'/'+pi+'/'+'process/Cards/run_card.dat'
                 if os.path.isfile(fname_p2) is True :
                     filename_mggpc = fname_p2
+                #file_run_card = open(filename_mggpc,"r")
+                if "Run3" in pi and "PbPb" not in pi:
+                    err_tmp = run3_run_card_check(filename_mggpc)
+                    error += err_tmp
                 alt_ickkw_c = os.popen('more '+filename_mggpc+' | tr -s \' \' | grep "= ickkw"').read()
                 alt_ickkw_c = int(re.search(r'\d+',alt_ickkw_c).group())
                 print("MG5 matching/merging: "+str(alt_ickkw_c))
@@ -770,7 +837,7 @@ for num in range(0,len(prepid)):
                     print("qCutME = ",qCutME)
                     ptj_runcard = os.popen('grep "ptj" '+filename_mggpc).read()
                     ptj_runcard = ptj_runcard.replace(" ","")
-                    ptj_runcard = re.findall('\d+=ptj',ptj_runcard)[0].split("=")[0]
+                    ptj_runcard = re.findall('\d*\.?\d+',ptj_runcard)[0].split("=")[0]
                     print("ptj_runcard =", ptj_runcard)
                     if float(qCutME) != float(ptj_runcard):
                         error += 1
@@ -782,6 +849,10 @@ for num in range(0,len(prepid)):
                     if int(nQmatch) != int(maxjetflavor):
                         error += 1
                         print("[ERROR] nQmatch in PS settings and maxjetflavor in run_card in gridpack do not match.")
+        if herwig_flag == 0 and pw_gp is True:
+            warn_tmp , err_tmp = vbf_dipole_recoil_check(vbf_lo,vbf_nlo,data_f2,pw_gp,dn)
+            warning += warn_tmp
+            error += err_tmp
         if herwig_flag != 0:
             os.system('wget -q https://raw.githubusercontent.com/cms-sw/genproductions/master/bin/utils/herwig_common.txt -O herwig_common.txt') 
             file2 = set(line.strip().replace(",","") for line in open(pi))
@@ -869,15 +940,15 @@ for num in range(0,len(prepid)):
         if timeperevent > 0:   
             nevts = (8*3600/timeperevent)*total_eff
             print("Expected number of events = "+str(nevts))
-        if  nevts < 50. and ppd == 0:
-            print("[ERROR] The expected number of events is too small (<50): "+str(nevts))
-            print("        Either the timeperevent value is too large or the filter or matching efficiency is too small. ")
-            print("        Note that total_efficiency = filter_efficiency x matching_efficiency.") 
-            print("        Please check or improve:") 
-            print("            time per event = "+str(timeperevent))
-            print("            filter efficiency = "+str(filter_eff))
-            print("            matching efficiency = "+str(match_eff))
-            error += 1
+#        if  nevts < 50. and ppd == 0:
+#            print("[ERROR] The expected number of events is too small (<50): "+str(nevts))
+#            print("        Either the timeperevent value is too large or the filter or matching efficiency is too small. ")
+#            print("        Note that total_efficiency = filter_efficiency x matching_efficiency.") 
+#            print("        Please check or improve:") 
+#            print("            time per event = "+str(timeperevent))
+#            print("            filter efficiency = "+str(filter_eff))
+#            print("            matching efficiency = "+str(match_eff))
+#            error += 1
 
         if any(word in dn for word in MEname) and gp_size == 0 and "plhe" not in pi.lower():
             print("[ERROR] gridpack path is not properly specified - most probable reason is that it is not a cvmfs path.")
@@ -1278,18 +1349,20 @@ for num in range(0,len(prepid)):
                         loop_flag = int(os.popen('more '+filename_pc+' | grep -c "noborn=QCD"').read())
                         gen_line = os.popen('grep generate '+filename_pc).read()
                         print(gen_line)
-                        proc_line = os.popen('grep process '+filename_pc).read()
+                        proc_line = os.popen('grep process '+filename_pc+' | grep -v set').read()
                         print(proc_line)
                         proc_line = gen_line.replace('generate','') + "\n" + proc_line 
                         print("Simplified process lines:")
-                        if (gen_line.count('@') <= proc_line.count('@')) or (proc_line.count('add') > 0):
+                        if (gen_line.count('@') > 0 and gen_line.count('@') <= proc_line.count('@')) or (proc_line.count('add') > 0):
                             proc_line = proc_line.split('add process')
+                            print(proc_line)
                             for y in range(0,len(proc_line)):
                                 if proc_line[y].startswith("set"): continue
                                 zz = proc_line[y] 
                                 if "," in proc_line[y]: zz = proc_line[y].split(',')[0]
-                                print(zz) 
+                                zz = zz.translate(str.maketrans('','',string.punctuation))
                                 nbtomatch = zz.count('b') if maxjetflavor > 4 else 0
+                                print(zz.count('c'))
                                 nc = zz.count('c') if "chi" not in zz else 0
                                 if "excl" in zz and nc != 0: nc = nc -1
                                 jet_count_tmp.append(zz.count('j') + nbtomatch + nc)
@@ -1308,6 +1381,17 @@ for num in range(0,len(prepid)):
                             print("[WARNING] nJetMax(="+str(nJetMax)+") is not equal to the number of jets specified in the proc card(="+str(jet_count)+").")
                             print("          Is it because this is an exclusive production with additional samples with higher multiplicity generated separately?")
                             warning += 1
+                        print("Jet Count = "+str(jet_count))
+                        if jet_count >= 2 and alt_ickkw_c == 0:
+                            if mg_nlo:
+                                vbf_nlo = 1
+                                print("VBF process at NLO")
+                            else:
+                                vbf_lo = 1   
+                                print("VBF process at LO")
+                        warn_tmp , err_tmp = vbf_dipole_recoil_check(vbf_lo,vbf_nlo,data_f2,pw_gp,dn)
+                        warning += warn_tmp
+                        error += err_tmp
                     if os.path.isfile(filename_mggpc) is True :
                         ickkw = os.popen('more '+filename_mggpc+' | tr -s \' \' | grep "= ickkw"').read()
                         bw = os.popen('more '+filename_mggpc+' | tr -s \' \' | grep "= bwcutoff"').read()
@@ -1583,6 +1667,9 @@ for num in range(0,len(prepid)):
         if int(os.popen('grep -c -i filter '+pi).read()) > 3 and filter_eff == 1:
             print("[WARNING] Filters in the fragment but filter efficiency = 1")
             warning += 1
+        if "Run3" in pi and "PbPb" not in pi:
+            err_tmp = run3_checks(data_f1,dn)
+            error += err_tmp
         if args.develop is False:
             os.popen("rm -rf "+my_path+pi).read()
             os.popen("rm -rf "+my_path+'eos/'+pi).read()
