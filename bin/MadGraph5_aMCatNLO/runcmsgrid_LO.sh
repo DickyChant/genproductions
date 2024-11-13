@@ -69,6 +69,8 @@ echo "run_mode = 2" >> ./madevent/Cards/me5_configuration.txt
 echo "nb_core = $ncpu" >> ./madevent/Cards/me5_configuration.txt
 #fi
 
+if [ ! -e $LHEWORKDIR/header_for_madspin.txt ]; then
+
 #########################################
 # FORCE IT TO PRODUCE EXACTLY THE REQUIRED NUMBER OF EVENTS
 #########################################
@@ -209,6 +211,46 @@ if { echo "systematics $runlabel --start_id=1001 --pdf=$pdfsets $scalevars" | ./
     exit 10086
 fi
 popd
+
+else 
+
+    cd $LHEWORKDIR/external_tarball
+    ./runcmsgrid.sh $nevtjob $rnum $ncpu
+
+    sed -i "/<init>/ {
+         h
+         r ../header_for_madspin.txt
+         g
+         N
+     }" cmsgrid_final.lhe
+
+    if grep -R "<initrwgt>" cmsgrid_final.lhe; then
+        sed -n '/<initrwgt>/,/<\/initrwgt>/p' cmsgrid_final.lhe > ../initrwgt.txt
+    fi
+
+    mv cmsgrid_final.lhe ../cmsgrid_predecay.lhe
+    cd $LHEWORKDIR
+    rm -r external_tarball
+    echo "import $LHEWORKDIR/cmsgrid_predecay.lhe" > madspinrun.dat
+    echo "set ms_dir $LHEWORKDIR/process/madspingrid" >> madspinrun.dat
+    echo "launch" >> madspinrun.dat
+    $LHEWORKDIR/mgbasedir/MadSpin/madspin madspinrun.dat
+    rm madspinrun.dat
+    rm cmsgrid_predecay.lhe.gz
+    mv cmsgrid_predecay_decayed.lhe.gz cmsgrid_final.lhe.gz
+    gzip -d cmsgrid_final.lhe.gz
+
+    if [ -e initrwgt.txt ]; then
+	sed -i "/<\/header>/ {
+             h
+             r initrwgt.txt
+             g
+             N
+        }" cmsgrid_final.lhe
+	rm initrwgt.txt
+    fi
+
+fi
 
 # check lhe output  
 echo -e "\nRun xml check" 

@@ -545,6 +545,7 @@ make_gridpack () {
     
       if [ -e $CARDSDIR/${name}_externaltarball.dat ]; then
           gunzip ./Events/pilotrun_decayed_1/events.lhe.gz
+          echo "Here 548"
           sed -n '/<MG5ProcCard>/,/<\/slha>/p' ./Events/pilotrun_decayed_1/events.lhe > header_for_madspin.txt
           mv header_for_madspin.txt $WORKDIR
           gzip ./Events/pilotrun_decayed_1/events.lhe
@@ -628,8 +629,18 @@ make_gridpack () {
         cat $CARDSDIR/${name}_madspin_card.dat >> madspinrun.dat
         $WORKDIR/$MGBASEDIRORIG/MadSpin/madspin madspinrun.dat 
         rm madspinrun.dat
+      if [ -e $CARDSDIR/${name}_externaltarball.dat ]; then
+          ls $WORKDIR
+          cp $WORKDIR/unweighted_events_decayed.lhe.gz ./
+          gunzip unweighted_events_decayed.lhe.gz #./Events/pilotrun_decayed_1/events.lhe.gz
+          echo "Here 635"
+          sed -n '/<MG5ProcCard>/,/<\/slha>/p'  unweighted_events_decayed.lhe > header_for_madspin.txt
+          mv header_for_madspin.txt $WORKDIR
+          rm -rf unweighted_events_decayed.lhe
+      fi
         rm -rf tmp*
       fi
+      ls 
     
       echo "preparing final gridpack"
       
@@ -647,6 +658,9 @@ make_gridpack () {
       cd gridpack
       
       cp $PRODHOME/runcmsgrid_LO.sh ./runcmsgrid.sh
+      if [ -e $CARDSDIR/${name}_externaltarball.dat ]; then
+        mv $WORKDIR/header_for_madspin.txt . 
+      fi
     fi
     
     sed -i s/SCRAM_ARCH_VERSION_REPLACE/${scram_arch}/g runcmsgrid.sh
