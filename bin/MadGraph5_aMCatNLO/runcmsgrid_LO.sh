@@ -241,20 +241,24 @@ else
     $LHEWORKDIR/mgbasedir/MadSpin/madspin madspinrun.dat
     rm madspinrun.dat
     rm cmsgrid_predecay.lhe.gz
-    runlabel=GridRun_PostProc_${rnum}
-    mkdir $LHEWORKDIR/process/madevent/Events/${runlabel}
-    mv $LHEWORKDIR/process/madspingrid/*/events.lhe.gz $LHEWORKDIR/process/madevent/Events/${runlabel}/events.lhe.gz
-    gzip -d $LHEWORKDIR/process/madevent/Events/${runlabel}/events.lhe.gz
+
+    gzip -d events_decayed.lhe.gz
 
     if [ -e initrwgt.txt ]; then
-	sed -i "/<\/header>/ {
-             h
-             r initrwgt.txt
-             g
-             N
-        }" cmsgrid_final.lhe
-	rm initrwgt.txt
+      sed -i "/<\/header>/ {
+                h
+                r initrwgt.txt
+                g
+                N
+            }" cmsgrid_final.lhe
+      rm initrwgt.txt
     fi
+
+    runlabel=GridRun_PostProc_${rnum}
+    mkdir $LHEWORKDIR/process/madevent/Events/${runlabel}
+    mv events_decayed.lhe $LHEWORKDIR/process/madevent/Events/${runlabel}/events.lhe
+
+    
 
 fi
 
