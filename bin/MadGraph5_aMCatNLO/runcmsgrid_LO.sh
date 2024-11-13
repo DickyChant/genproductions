@@ -215,7 +215,7 @@ popd
 else 
 
     cd $LHEWORKDIR/external_tarball
-    ./runcmsgrid.sh $nevtjob $rnum $ncpu
+    ./runcmsgrid.sh $nevt $rnum $ncpu
 
     sed -i "/<init>/ {
          h
@@ -233,7 +233,7 @@ else
     rm -r external_tarball
     echo "import $LHEWORKDIR/cmsgrid_predecay.lhe" > madspinrun.dat
     echo "set ms_dir $LHEWORKDIR/process/madspingrid" >> madspinrun.dat
-    cp $LHEWORKDIR/InputCards/madspin_card.dat madspinrun.tmp
+    cat $LHEWORKDIR/InputCards/*madspin_card.dat > madspinrun.tmp
     sed -i -e '/set ms_dir/d' -e '/launch/d' madspinrun.tmp
     cat madspinrun.tmp >> madspinrun.dat
     rm madspinrun.tmp
@@ -241,7 +241,7 @@ else
     $LHEWORKDIR/mgbasedir/MadSpin/madspin madspinrun.dat
     rm madspinrun.dat
     rm cmsgrid_predecay.lhe.gz
-    mv cmsgrid_predecay_decayed.lhe.gz cmsgrid_final.lhe.gz
+    mv events.lhe.gz cmsgrid_final.lhe.gz
     gzip -d cmsgrid_final.lhe.gz
 
     if [ -e initrwgt.txt ]; then
