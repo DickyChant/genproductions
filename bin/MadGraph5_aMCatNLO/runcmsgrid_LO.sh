@@ -233,6 +233,10 @@ else
     rm -r external_tarball
     echo "import $LHEWORKDIR/cmsgrid_predecay.lhe" > madspinrun.dat
     echo "set ms_dir $LHEWORKDIR/process/madspingrid" >> madspinrun.dat
+    cp $LHEWORKDIR/InputCards/madspin_card.dat madspinrun.tmp
+    sed -i -e '/set ms_dir/d' -e '/launch/d' madspinrun.tmp
+    cat madspinrun.tmp >> madspinrun.dat
+    rm madspinrun.tmp
     echo "launch" >> madspinrun.dat
     $LHEWORKDIR/mgbasedir/MadSpin/madspin madspinrun.dat
     rm madspinrun.dat
