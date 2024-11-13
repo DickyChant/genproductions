@@ -240,7 +240,7 @@ else
     echo "launch" >> madspinrun.dat
     $LHEWORKDIR/mgbasedir/MadSpin/madspin madspinrun.dat
     rm madspinrun.dat
-    rm cmsgrid_predecay.lhe.gz
+    rm cmsgrid_predecay.lhe
 
     gzip -d cmsgrid_predecay_decayed.lhe.gz
 
@@ -250,7 +250,7 @@ else
                 r initrwgt.txt
                 g
                 N
-            }" cmsgrid_final.lhe
+            }" cmsgrid_predecay_decayed.lhe
       rm initrwgt.txt
     fi
 
