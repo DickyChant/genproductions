@@ -241,8 +241,10 @@ else
     $LHEWORKDIR/mgbasedir/MadSpin/madspin madspinrun.dat
     rm madspinrun.dat
     rm cmsgrid_predecay.lhe.gz
-    mv $LHEWORKDIR/process/madspingrid/*/events.lhe.gz cmsgrid_final.lhe.gz
-    gzip -d cmsgrid_final.lhe.gz
+    runlabel=GridRun_PostProc_${rnum}
+    mkdir $LHEWORKDIR/process/madevent/Events/${runlabel}
+    mv $LHEWORKDIR/process/madspingrid/*/events.lhe.gz $LHEWORKDIR/process/madevent/Events/${runlabel}/events.lhe.gz
+    gzip -d $LHEWORKDIR/process/madevent/Events/${runlabel}/events.lhe.gz
 
     if [ -e initrwgt.txt ]; then
 	sed -i "/<\/header>/ {
