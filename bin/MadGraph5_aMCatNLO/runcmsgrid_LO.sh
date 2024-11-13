@@ -241,7 +241,7 @@ else
     $LHEWORKDIR/mgbasedir/MadSpin/madspin madspinrun.dat
     rm madspinrun.dat
     rm cmsgrid_predecay.lhe.gz
-    mv events.lhe.gz cmsgrid_final.lhe.gz
+    mv $LHEWORKDIR/process/madspingrid/*/events.lhe.gz cmsgrid_final.lhe.gz
     gzip -d cmsgrid_final.lhe.gz
 
     if [ -e initrwgt.txt ]; then
